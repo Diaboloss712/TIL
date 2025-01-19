@@ -38,13 +38,18 @@ You need Programming Skills <br>
 
 ### 문자열 곱하기 <br>
 <br>
+<br>
+
+
 '''
 a = "python"
 a * 2
 'pythonpython'
 '''
-<br>
 
+
+<br>
+<br>
 ### 문자열 인덱싱 <br>
 <br>
 
