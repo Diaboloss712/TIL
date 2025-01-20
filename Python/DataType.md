@@ -1,4 +1,3 @@
-# Python의 자료형 <br>
 ## 숫자형 <br>
 | 항목 | 파이썬 사용 예 |
 | :---- | :----- |
@@ -37,47 +36,35 @@ You need Programming Skills <br>
     You need Programming skills <br>
 
 ### 문자열 곱하기 <br>
-<br>
-<br>
 
-
-'''
+```
 a = "python"
 a * 2
 'pythonpython'
-'''
+```
 
-
-<br>
-<br>
 ### 문자열 인덱싱 <br>
-<br>
-
-'''
+```
 a = "Life is too short, You need Python"
 a[-1] = 'n'
 a[-2] = 'o'
 a[-0] = a[0] = 'L'
-'''
-<br>
+```
 
 ### 문자열 슬라이싱 <br>
-'''
+```
 a[0:5] = a[0]+a[1]+a[2]+a[3]+a[4] = 'Life '
-'''
+```
 시작 번호나 끝 번호를 생략시 생략한 방향의 끝까지 출력 <br>
 a[19:-7] = a[19:-8] = 'You need' <br>
 
 ### 문자열 포매팅 <br>
-<br>
-
-'''
+```
 number = 815
 day = "five"
 "I ate %d apples. so I was sick for %s days." % (number, day)
 'I ate 815 apples. so I was sick for five days.'
-'''
-<br>
+```
 
 ### 문자열 포맷 코드 <br>
 | 코드 | 설명 |
@@ -91,13 +78,11 @@ day = "five"
 |%% | Literal %(문자 % 자체)
 
 ### f문자열 포매팅 <br>
-<br>
-'''
+```
 text = '이건 어떻게'
 num = 15
 f'내가 다음으로 말하고 싶은 것은 {text} 해야 할지다. {num} 번 생각했다'
-'''
-<br>
+```
 
 ### 리스트 자료형 <br>
 생성 예시 : a = list(), a = [] <br>
@@ -111,12 +96,10 @@ list 추가 : a.append([5,6]) <br>
 
 ### 딕셔너리 자료형 <br>
 Key, Value 쌍을 가진 형태 <br>
-<br>
 
-'''
+```
 dic = { 'name' : 'dia', 'num' : '10', 'study' = 'python'}
-'''
-<br>
+```
 
 ### 딕셔너리 관련 함수 <br>
 keys : 딕셔너리의 Key만을 모아 dict_keys 객체를 리턴 <br>

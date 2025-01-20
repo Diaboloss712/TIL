@@ -1,6 +1,6 @@
-git 2일차
+# git 2일차
 
-#git 1일차 리뷰 + 정리
+## git 1일차 리뷰 + 정리
 
 git : 변경사항만 기록하는 분산 버전 관리 시스템<br>
 commit : 하나의 기능에 관련된 코드를 묶는다<br>
@@ -27,3 +27,10 @@ git clone url : url의 repository를 복제 <br>
 git stash : 현재 올라가지 않은 내용이 stash에 보관 <br>
 git stash list : 보관되고 있는 내용 리스트 <br>
 git stash pop num : num에 해당하는 보관내용 가져오기 <br>
+
+
+#API
+
+API : 클라이언트와 서버 사이의 인터페이스 역할 <br>
+API Key는 이 통신을 더욱 안전하게 만들기 위한 핵심 수단 <br>
+
