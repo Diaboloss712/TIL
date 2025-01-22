@@ -6,8 +6,8 @@
 값이 같은지를 비교, 동등성 <br>
 
 ### is 비교 연산자 <br> 
-객체 자체가 같은지를 비교, 식별성 <br> 
-같은 메모리 주소를 가리켜야 통과됨 <br>
+<u>**객체 자체가 같은지를 비교**</u>, 식별성 <br> 
+<u>**같은 메모리 주소**</u>를 가리켜야 통과됨 <br>
 print(1 is True) # False <br>
 print(2 is 2.0) # False <br>
 
@@ -22,6 +22,12 @@ None을 비교를 비교 할 때 <br>
 싱클턴 객체 : 프로그램 전체에서 오직 1개만 존재하도록 만들어진 특별한 객체 <br> 
 
 ==와 is 정리 <br>
+값 비교 : == <br>
+객체 비교 : is <br>
+
+---
+---
+---
 
 ### 논리 연산자 <br> 
 |기호|연산자|내용|
@@ -35,8 +41,6 @@ True일때 뒤의 값을 반환한다. <br>
 ex) print(('a' and 'b') in 'aeiou') # False <br>
 ex) print(('b' and 'a') in 'aeiou') # True <br>
 'b' and 'a' -> 'a'(뒤의 값), 'a' in 'aeiou' -> True <br>
-
-### 시퀀스형 연산자 <br>
 
 ### Trailing Comma <br> 
 컬렉션의 마지막 요소 뒤에 붙는 쉼표 <br>
