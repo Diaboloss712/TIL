@@ -98,7 +98,7 @@ arr = [list(map(int, input())) for _ in range(N)]
 arr = [3,6,7,1,5,4]
 
 n = len(arr)
-# 부분 집합의 개수만큼큼
+# 부분 집합의 개수만큼
 # 원수의 수만큼 비트를 비교하고
 # i의 j번 비트가 1인경우
 # j번 원소 출력
@@ -120,3 +120,80 @@ Python에서의 문자열 처리
         - 문자열 + 문자열 : 이어 붙이는 역할
     * 반복
         - 문자열 * 수 : 수만큼 문자열이 반복
+
+
+Brute Force
+- 본문 문자열을 처음부터 끝까지 차례대로 순회하면서 패턴 내의 문자들을 일일이 비교하는 방식으로 동작
+
+KMP
+
+보이어 무어 알고리즘
+- 오른쪽에서 왼쪽으로 비교
+- 패턴에 오른쪽 끝에 있는 문자가 불일치 하고 이 문자가 패턴 내에 존재하지 않는 경우, 이동 거리는 무려 패턴의 길이만큼이 된다.
+- 최악의 경우 수행시간 : O(mn)
+
+```
+t = 'TTATATTATATATTTA'
+p = 'TTA'
+
+
+def search(p, t):
+    N = len(t)
+    M = len(p)
+    for i in range(N-M+1):
+        for j in range(M):
+            if t[i+j] != p[j]:
+                break
+        else:               # break에 걸리지 않고 for가 끝난경우 실행
+            return i        # 패턴이 처음 나타난 인덱스 리턴
+    return -1
+
+print(search(p, t))
+
+
+Stack : 물건을 쌓아 올리듯 자료를 쌓아 올린 형태의 자료구조
+- 후입선출
+
+``` python
+class Stack:
+    top = -1
+
+    def __init__(self, size=100):
+        self.size = size
+        self.top = -1
+        self.items = [None] * size
+
+    def push(self, item):
+        self.top += 1
+        self.items[self.top] = item
+
+    def pop(self):
+        item = self.items[self.top]
+        self.items[self.top] = None
+        self.top -= 1
+        return item
+
+    def peek(self):
+        item = self.items[self.top]
+        return item
+
+    def is_empty(self):
+        return self.top == -1
+
+```
+
+DP : 최적화 문제를 해결하는 알고리즘
+
+``` python
+def fibo2(n):
+    f = [0] * (n+1)
+    f[0] = 0
+    f[1] = 1
+    for i in range(2, n+1):
+        f[i] = f[i-1] + f[i-2]
+    return f[n]
+```
+
+DFS : 비선형구조를 가장 깊은곳부터 탐색하는 방법
+- 가장 마지막에서 다른 길로 탐색을 하는 과정을 반복하기 때문에 스택을 사용
+- 한바퀴를 순회하는 구조의 경우 방문한 곳을 표기하기 위한 visited 사용 필요
