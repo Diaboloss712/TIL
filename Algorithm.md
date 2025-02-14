@@ -125,6 +125,8 @@ Python에서의 문자열 처리
 Brute Force
 - 본문 문자열을 처음부터 끝까지 차례대로 순회하면서 패턴 내의 문자들을 일일이 비교하는 방식으로 동작
 
+---
+---
 KMP
 
 보이어 무어 알고리즘
@@ -150,6 +152,8 @@ def search(p, t):
 
 print(search(p, t))
 
+---
+---
 
 Stack : 물건을 쌓아 올리듯 자료를 쌓아 올린 형태의 자료구조
 - 후입선출
@@ -182,6 +186,9 @@ class Stack:
 
 ```
 
+---
+---
+
 DP : 최적화 문제를 해결하는 알고리즘
 
 ``` python
@@ -197,3 +204,35 @@ def fibo2(n):
 DFS : 비선형구조를 가장 깊은곳부터 탐색하는 방법
 - 가장 마지막에서 다른 길로 탐색을 하는 과정을 반복하기 때문에 스택을 사용
 - 한바퀴를 순회하는 구조의 경우 방문한 곳을 표기하기 위한 visited 사용 필요
+
+``` python
+
+def dfs(v, N):
+    visited = [0] * (N+1)
+    stack = []
+
+    while True:
+        if visited[v] == 0:
+            visited[v] = 1
+            print(v)
+        for w in adj_list[v]:
+            if visited[w] == 0:
+                stack.append(v)
+                v = w
+                break
+        else:
+            if stack:
+                v = stack.pop()
+            else:
+                break
+
+
+V, E = map(int, input().split())
+graph = list(map(int, input().split()))
+adj_list = [[] for _ in range(V+1)]
+
+for i in range(E):
+    v, w = graph[i*2], graph[i*2+1]
+
+    adj_list[v].append(w)
+    adj_list[w].append(v)
