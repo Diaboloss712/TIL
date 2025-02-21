@@ -236,3 +236,174 @@ for i in range(E):
 
     adj_list[v].append(w)
     adj_list[w].append(v)
+
+
+후위 표기법 변환과정
+1. 피연산자면 append
+2. ')'면 '('가 올 때까지 스택에서 pop
+3. 연산자일 때
+- 스택이 비어있을 경우 무조건 push
+- 스택의 peek보다 우선순위가 높으면 push
+- 스택의 peek보다 우선순위가 낮으면 스택의 peek가 우선순위가 더 낮아질 때까지 pop을 진행한 후에 push
+4. 스택이 비어있지 않다면 전부 pop
+
+
+백트래킹
+해당 방향의 검색 결과가 의미없을 경우 되돌아가서 최적화하는 기법
+
+
+순열
+```
+def backtrack(a, k, n):
+    c = [0] * MAXCANDIDATES
+
+    if k == n:
+        for i in range(0, k):
+            print(a[i], end=" ")
+        print()
+    else:
+        ncandidates = construct_candidates(a, k, n, c)
+        for i in range(ncandidates):
+            a[k] = c[i]
+            backtrack(a, k + 1, n)
+
+def construct_candidates(a, k, n, c):
+    in_perm = [False] * (NMAX + 1)
+
+    for i in range(k):
+        in_perm[a[i]] = True
+
+    ncandidates = 0
+    for i in range(1, NMAX + 1):
+        if in_perm[i] == False:
+            c[ncandidates] = i
+            ncandidates += 1
+    return ncandidates
+
+MAXCANDIDATES = 3
+NMAX = 3
+a = [0]*NMAX
+backtrack(a, 0, 3)
+```
+
+아래는 내가 생각한 코드
+
+```
+def backtrack(arr, visited, depth, new_arr)
+    if depth == N:
+        for i in range(depth):
+            print(arr[i], end=" ")
+        print()
+    else:
+        for i in range(len(arr)):
+            if not visited[i]:
+                new_arr[depth] = arr[i]
+                visited[i] = 1
+                backtrack(arr, visited, depth, new_arr)
+                visited[i] = 0
+            else:
+                continue
+
+
+---
+---
+
+Queue
+|연산|기능|
+|:---:|:---|
+|enQueue(item)|큐의 뒤쪽에 원소를 삽입하는 연산|
+|deQueue()|큐의 앞쪽에서 원소를 삭제하고 반환하는 연산|
+|createQueue()|공백 상태의 큐를 생성하는 연산|
+|isEmpty()|큐가 공백상태인지를 확인하는 연산|
+|isFull()|큐가 포화상태인지를 확인하는 연산|
+|Qpeek()|큐의 앞쪽(front)에서 원소를 삭제 없이 반환하는 연산|
+
+
+선형큐
+```
+class Queue:
+    front = -1
+    rear = -1
+
+    def __init__(self):
+        self.size = 100
+        self.items = [None]*self.size
+        self.rear = -1
+        self.front = -1
+
+    def enqueue(self, data):
+        self.rear += 1
+        self.items[self.rear] = data
+
+    def dequeue(self):
+        self.front += 1
+        data = self.items[self.front]
+        self.items[self.front] = 0
+        return data
+
+    def is_empty(self):
+        return self.rear == self.front
+
+    def peek(self):
+        return self.items[self.front+1]
+```
+문제점 : 점점 뒤로 가기 때문에 앞에 있는 빈 공간을 활용할 수가 없다.
+
+
+원형 큐
+```
+class CircularQueue:
+    front = -1
+    rear = -1
+
+    def __init__(self):
+        self.size = 100
+        self.items = [None]*self.size
+        self.rear = -1
+        self.front = -1
+
+    def enqueue(self, data):
+        self.rear = (self.rear + 1) % self.size
+        self.items[self.rear] = data
+
+    def dequeue(self):
+        if self.is_empty():
+            print('Queue가 empty라 불가능')
+        self.front = (self.front + 1) % self.size
+        data = self.items[self.front]
+        self.items[self.front] = 0
+        return data
+
+    def is_empty(self):
+        return self.rear == self.front
+
+    def peek(self):
+        return self.items[self.front+1]
+
+    def is_full(self):
+        return (self.rear + 1) % self.size == self.front
+```
+
+deque(덱)
+- 양쪽 끝에서 빠르게 추가와 삭제를 할 수 있는 리스트류 컨테이너
+연산
+- append(x) : 오른쪽에 x 추가
+- popleft() : 왼쪽에서 요소를 제거하고 반환. 요소가 없으면 IndexError
+
+
+Priority Queue
+우선순위대로 나가는 큐
+
+버퍼
+- 데이터를 한 곳에서 다른 한 곳으로 전송하는 동안 일시적으로 그 데이터를 보관하는 메모리의 영역
+- 버퍼링 : 버퍼를 활용하는 방식 또는 버퍼를 채우는 동작을 의미한다.
+
+버퍼의 자료 구조
+- 버퍼는 일반적으로 입출력 및 네트워크와 관련된 기능에서 이용된다.
+- 순서대로 입력/출력/전달되어야 하므로 FIFO 방식의 자료구조인 큐가 활용된다.
+
+
+---
+---
+
+BFS
