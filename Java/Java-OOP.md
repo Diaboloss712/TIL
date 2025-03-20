@@ -177,3 +177,37 @@ this와 같은 역할
 
 ### 매개변수의 다형성
 - 참조형 매개변수는 메서드 호출시, 자신과 같은 타입 또는 자손타입의 인스턴스를 넘겨줄 수 있다.
+
+``` Java
+class Product {
+    int price;
+    int bonusPoint;
+}
+
+class Tv extends Product {}
+class Computer extends Product {}
+
+class Buyer {
+    int money = 1000;
+    int bonusPoint = 0;
+}
+
+Buyer b = new Buyer();
+
+Tv tv = new Tv();
+Computer com = new Computer();
+
+b.buy(tv);
+b.buy(com);
+
+void buy(Tv t) {
+    money -= t.price;
+    bonusPoint += t.bonusPoint;
+}
+
+void buy(Product p) {
+    money -= p.price;
+    bonusPoint += p.bonusPoint;
+}
+```
+
