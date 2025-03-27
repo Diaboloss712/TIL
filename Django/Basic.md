@@ -1,120 +1,132 @@
-# Django 튜토리얼: 설치부터 Templates까지지
+# Django 튜토리얼: 설치부터 Templates까지
 
-## 장고 설치 과정
+## 1. 장고 설치 과정
 
-1. 파이썬 가상환경 설치
-    - python -m venv venv
-2. 장고 설치
-    - django-admin startproject pjt_name
-3. 서버 실행
-    - python manage.py runserver
-4. git 설정
-5. 앱 생성
-    - python manage.py startapp articles
-6. setting.py에 앱 연결
-    - INSTALLED APPS에 'articles' 추가
-7. articles에 templates 생성
-    - templates는 MVC로 가정하면 View, 즉 사용자에게 보이는 페이지를 모은 곳
-    - templates에서 페이지 파일을 만들고 urls에서 연결하면 해당 페이지를 반환
-8. urls에서 페이지와 주소 연결
-9. 필요한 설치 리스트 기록
-    - pip freeze > requirements.txt
-    - 자동 갱신이 안 되기 때문에 설치파일을 추가할 때마다 해줘야한다.
+1. 파이썬 가상환경 설치  
+   - 명령어: 
+     python -m venv venv
 
-url -> view -> templates
+2. 장고 프로젝트 생성  
+   - 명령어: 
+     django-admin startproject pjt_name
 
----
+3. 서버 실행  
+   - 명령어: 
+     python manage.py runserver
 
-## Django의 MTV 아키텍처
+4. git 설정 (git init, gitignore 생성)
 
-Django의 MVT패턴은 MVC 패턴과 개념적으로 유사하다.
-MVC = Model-View-Controller
-1. Model : 데이터와 비즈니스 로직을 관리한다.
-2. View : 레이아웃과 화면을 처리한다.
-3. Controller : 모델과 뷰로 명령을 전달한다.
+5. 앱 생성  
+   - 명령어: 
+     python manage.py startapp articles
 
-MTV = Model-Templates-View
-- Model: 데이터 구조를 정의하고 DB를 관리한다.
-- Template: HTML 파일 등 사용자 인터페이스의 구조와 레이아웃을 정의한다.
-- View: HTTP 요청 수신 및 반환하는 요청 처리 함수. Model을 통해 데이터에 접근하고, Template에게 응답의 서식 설정 맡긴다.
+6. 앱 연결  
+   - settings.py 파일의 INSTALLED_APPS에 'articles' 추가
 
----
+7. Templates 폴더 생성 (View 역할)  
+   - articles 앱 내부 또는 별도 위치에 templates 폴더를 생성  
+   - 이 폴더는 MVC 관점에서 View, 즉 사용자에게 보여지는 페이지들을 모아놓은 곳이다.  
+   - 템플릿 파일을 생성한 후, URL과 연결하면 해당 페이지가 반환된다.
 
-## Template System
+8. URL과 View 연결  
+   - URL 패턴을 정의하여 템플릿을 반환하는 View와 연결
 
-1. Variable
-    - render 함수의 세번째 인자로 딕셔너리 데이터를 사용한다.
-    - 딕셔너리 key에 해당하는 문자열이 template에서 사용 가능한 변수명이 된다.
-    - dot('.')를 사용하여 변수 속성에 접근할 수 있다.
-2. Filters
-    - 표시할 변수를 수정할 때 사용 (변수 + '|' + 필터)
-    - chained이 가능하며 일부 필터는 인자를 받기도 한다.
-    - 약 60개의 built-in template filters를 제공한다.
-    - {{variable|filter}}
-    - {{name|truncatewords:30}}
-3. Tags
-    - 반복 또는 논리를 수행하여 제어 흐름을 만든다.
-    - 일부 태그는 시작과 종료 태그가 필요하다.
-    - 약 24개의 built-in template tags를 제공한다.
-    - {% tag %}
-    - {% if %} {% endif %}
-4. Comments
-    - DTL에서의 주석
+9. 필요한 패키지 목록 기록  
+   - 명령어: 
+     pip freeze > requirements.txt  
+   - 주의: 설치 파일이 추가될 때마다 수동으로 갱신해야 한다.
+
+
+url -> view -> templates 순서로 요청이 처리된다.
 
 ---
 
-## Form의 역할
+## 2. Django의 MTV 아키텍처
 
-``` html
+Django의 아키텍처는 MVC 패턴과 유사한데, Django에서는 이를 MTV (Model-Templates-View) 패턴이라고 부른다.
+
+- Model  
+  - 데이터 구조를 정의하고 데이터베이스를 관리한다.
+- Template  
+  - HTML 파일 등 사용자 인터페이스의 구조와 레이아웃을 정의한다.
+- View  
+  - HTTP 요청을 받아 처리한 후, 적절한 응답을 반환한다.  
+  - 데이터는 Model을 통해 가져오고, Template에 전달하여 최종 응답을 생성한다.
+
+---
+
+## 3. Template System
+
+Django 템플릿 시스템은 웹 페이지의 동적 생성에 필요한 여러 기능을 제공한다.
+
+### 3.1. Variable
+- render 함수의 세 번째 인자로 전달된 딕셔너리의 key가 템플릿에서 사용 가능한 변수명이 된다.
+- 변수는 {{ variable }}와 같이 표시하며, .을 사용해 변수의 속성에 접근할 수 있다.
+
+### 3.2. Filters
+- 변수의 출력을 수정할 때 사용한다.
+- 구문:  
+  {{ variable | filter }}
+- 여러 필터를 체인 형태로 사용할 수 있으며, 일부 필터는 인자를 받기도 한다.
+- 예시:  
+  {{ name | truncatewords:30 }}
+- Django는 약 60개의 내장(built-in) 템플릿 필터를 제공한다.
+
+### 3.3. Tags
+- 조건문, 반복문 등 제어 흐름을 구성하는 데 사용된다.
+- 구문:  
+  {% tag %} ... {% endtag %}
+- 예시:  
+  {% if condition %}
+      <!-- 내용 -->
+  {% endif %}
+- Django는 약 24개의 내장 템플릿 태그를 제공한다.
+
+### 3.4. Comments
+- 템플릿 내에서 주석을 작성할 수 있다.
+- 구문:  
+  {# 이 부분은 주석 처리됩니다. #}
+
+---
+
+## 4. Form의 역할
+
+HTML Form은 사용자가 데이터를 입력하고 서버로 전송할 수 있게 해준다.
+
+### 예시 Form
+
 <form action="/receiver" method="GET">
     <input type="text" name="query" id="message">
     <input type="submit" value="submit">
 </form>
-```
 
-주소/test에서 위 코드로 구성된 페이지가 있다고 가정해보자.
+- 위 코드는 /test 페이지에 있다고 가정한다.
+- 사용자가 입력창에 test라는 텍스트를 입력하고 submit 버튼을 누르면, query=test라는 Query String Parameter가 생성되어 서버에 전송된다.
+- GET 방식은 입력값을 URL 파라미터에 그대로 노출시키므로, 보안이 필요한 데이터 전송에는 적합하지 않다.
+- 최종 URL 예시: /receiver?query=test
 
-input에 test라는 글자를 넣고 submit 버튼을 누른다면
+### 서버에서 파라미터 추출 (Django 예시)
 
-query=test라는 params가 생성될 것이다.
-
-위의 params가 생성되는 이유는 form의 method가 GET이기 때문이다.
-
-GET, POST 등의 method가 있는데, GET의 경우 입력값을 그대로 params에 넣어버리고 action의 위치로 보낸다. (따라서 보안이 필요한 정보는 GET을 쓰면 안된다.)
-
-따라서 주소 /receiver?query=test 로 이동될 것이다.
-
-
-URL에서 해당 파라미터를 사용하려고 params를 넣었으니 이제 사용하는 방법을 알아보자.
-
-이 값은 Query String Parameters라고 하는데, 입력 데이터를 key=value쌍으로 보낸 것이다.
-
-params에 있는 값은 request에 그대로 담겨있으니 사용하는 프레임워크에 따라 request에서 추출하면 된다.
-
-django를 기준으로는 request.GET.get('받을 값의 name')를 통하여 필요한 값을 얻을 수 있다.
-
-이 test 값을 목적지의 페이지에 넘겨주면 된다.
-
-``` python
 def receive(request):
     query = request.GET.get('query')
     context = {
         'text': query,
     }
     return render(request, 'receiver.html', context)
-```
+
+- 위 코드에서 request.GET.get('query')를 통해 URL 파라미터로 전달된 값을 추출한다.
+- 추출된 값을 템플릿에 전달하여 화면에 표시할 수 있다.
 
 ---
 
-## Django URLs
+## 5. Django URLs
 
-기본적으로 프로젝트를 만들면 urls.py가 있다.
+Django 프로젝트를 생성하면 기본적으로 urls.py 파일이 생성된다. 앱을 추가할수록 URL 패턴이 늘어나는데, 이를 효율적으로 관리하는 방법을 알아보자.
 
-하지만 app을 만들때마다 주소의 범위는 넓어질텐데 이것을 어떻게 처리할까?
+### 5.1. 개별 URL 작성의 문제
 
-다음의 예시를 통해 살펴보자.
+예를 들어, 다음과 같이 여러 URL 패턴을 작성하면 관리가 복잡해진다.
 
-``` python
 urlpatterns = [
     path('app1/board/', views.board),
     path('app2/board/', views.board),
@@ -124,35 +136,24 @@ urlpatterns = [
     path('app2/board/1/', views.detail),
     path('app1/board/2/', views.detail),
     path('app2/board/2/', views.detail),
-
 ]
-```
 
-만약에 홈페이지에서 항목마다 게시판이 있다면, 또한 다양한 기능이 있다면 상당히 복잡할 것이다.
+### 5.2. Variable Routing
 
-하지만 공통점을 보면 단순화 시킬 수 있다.
+- URL 내의 변수를 사용하여 공통된 패턴을 하나로 처리할 수 있다.
+- 예시:
 
-먼저 게시판의 세부 게시물인 board/1을 봤을 때,
-
-모든 세부 게시물은 board/num의 형태로 될 것이다.
-
-따라서 위의 경우 다음과 같이 작성할 수 있다.
-
-``` python
 urlpatterns = [
     path('app1/board/<int:num>/', views.detail),
 ]
-```
 
-이제 변수를 통해 들어오는 것은 위의 형태로 범위를 줄일 수 있다.
+- 이 방식은 Variable Routing이라 하며, URL 경로의 변수에 따라 동적으로 처리가 가능하다.
 
-이것을 Variable Routing이라고 한다.
+### 5.3. App URL Mapping
 
-다음으로 앱에 무관계하게 모든 url이 적혀있는데, 이것을 앱에 따라 나눌 수 있다.
+- 프로젝트의 urls.py에서 각 앱별 URL 패턴을 분리하여 관리할 수 있다.
+- 예시:
 
-프로젝트의 urls.py를 다음과 같이 바꿔보자.
-
-``` python
 # pjt/urls.py
 from django.urls import path, include
 
@@ -160,90 +161,67 @@ urlpatterns = [
     path('app1/', include('app1.urls')),
     path('app2/', include('app2.urls')),
 ]
-```
 
-``` python
 # app1/urls.py
 from django.urls import path
-from .import views
+from . import views
 
 urlpatterns = [
     path('board/', views.board),
     path('board/<int:num>/', views.detail),
     path('board/write/', views.write),
 ]
-```
 
-``` python
 # app2/urls.py
 from django.urls import path
-from .import views
+from . import views
 
 urlpatterns = [
     path('board/', views.board),
     path('board/<int:num>/', views.detail),
     path('board/write/', views.write),
 ]
-```
 
-여기서 include()는 일치하는 부분까지 잘라내고, 나머지는 include된 URL로 전달한다.
-
-이것을 App URL mapping이라고 한다.
+- include() 함수는 URL의 공통 부분을 잘라내고, 나머지 부분을 각 앱의 URL 패턴으로 전달한다.
+- 이를 App URL Mapping이라고 한다.
 
 ---
 
-## Naming URL patterns
+## 6. Naming URL Patterns
 
-url 태그는 주어진 URL 패턴의 이름과 일치하는 절대 경로 주소를 반환한다.
+URL 패턴에 이름을 부여하면, 템플릿에서 URL을 직접 입력하지 않고도 해당 이름을 통해 URL을 참조할 수 있다.
+이름을 지정하면 URL이 변경되더라도 템플릿의 수정을 최소화할 수 있다.
 
-URL에 이름을 지정하면 URL의 주소를 일일이 따라가면서 고칠 필요가 없다.
+### 6.1. 이름 지정 방법
 
-이름을 지정하기 위해 path 함수의 name 키워드 인자를 사용한다.
-
-이름을 지정했을 때 어떠한 변화가 발생하는지 코드를 통해 따라가보자.
-
-``` python
 # app2/urls.py
 from django.urls import path
-from .import views
+from . import views
 
 urlpatterns = [
     path('board/', views.board, name='board'),
     path('board/<int:num>/', views.detail, name='detail_board'),
     path('board/write/', views.write, name='write'),
 ]
-```
 
-``` html
-<!-- app2/board.html -->
-
-{% block content %}
-    <a href="/board/write">글쓰기</a>
-    <a href="/board/1">1번 게시물</a>
-{% endblock content %}
-
----------------------------
+### 6.2. 템플릿에서 URL 이름 사용
 
 <!-- app2/board.html -->
-
 {% block content %}
     <a href="{% url 'write' %}">글쓰기</a>
     <a href="{% url 'detail_board' %}">1번 게시물</a>
 {% endblock content %}
-```
 
-위의 코드를 보면 이제 일일이 주소를 입력하지 않아도 되는 것을 확인할 수 있다.
+- 위와 같이 URL 이름을 사용하면, 주소를 직접 입력할 필요 없이 해당 이름에 맞는 URL로 자동 연결된다.
 
-하지만 여전히 문제점이 하나 남아있는데,
+### 6.3. 앱별 이름공간 (Namespace)
 
-서로 다른 app에서 같은 기능의 코드가 있으면 중복되는 이름을 가질 수 있다.
+- 여러 앱에서 같은 이름을 사용할 경우 이름이 중복될 수 있다.
+- 이를 해결하기 위해 각 앱에 이름공간(namespace)을 지정할 수 있다.
 
-이 문제는 app에 이름을 붙이는 것으로 해결할 수 있다.
-
-``` python
 # app2/urls.py
 from django.urls import path
-from .import views
+from . import views
 
 app_name = 'review'
 urlpatterns = [
@@ -251,15 +229,18 @@ urlpatterns = [
     path('board/<int:num>/', views.detail, name='detail_board'),
     path('board/write/', views.write, name='write'),
 ]
-```
 
-이제 url 태그의 양식에 맞추면 url은 다음과 같아진다.
+- 템플릿에서는 앱 이름공간을 함께 사용한다.
 
-``` html
 <!-- app2/board.html -->
-
 {% block content %}
     <a href="{% url 'review:write' %}">글쓰기</a>
     <a href="{% url 'review:detail_board' num=1 %}">1번 게시물</a>
 {% endblock content %}
-```
+
+---
+
+## 결론
+
+이 문서에서는 Django의 설치 과정, MTV 아키텍처, 템플릿 시스템, 폼의 역할, URL 매핑 및 네이밍에 대해 설명하였다.  
+Django를 통해 모델 정의, 데이터 처리, 템플릿 렌더링, URL 관리를 간편하게 할 수 있으며, 각 단계에서 제공되는 다양한 기능을 적절히 활용하면 효율적인 웹 애플리케이션 개발이 가능하다.
