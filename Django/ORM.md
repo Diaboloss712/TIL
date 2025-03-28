@@ -75,7 +75,7 @@ Test.objects.create(name='user3', age=16)
 - 생성된 데이터를 조회하는 방법에는 `all()`, `filter()`, `get()` 등이 있다.
 - Shell에서 다음과 같이 입력하여 데이터를 조회한다.
 
-```python
+``` python
 # 전체 객체 조회
 test1 = Test.objects.all()
 print(test1)
