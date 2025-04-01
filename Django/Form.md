@@ -8,8 +8,9 @@
 
 Form에서는 그런 복잡한 데이터와 유효성 검사를 처리할 수 있는 방법을 제시해준다.
 
+---
 
-## Form class 정의
+## Form class
 
 Form에는 두 가지의 종류가 있다.
 
@@ -87,7 +88,7 @@ def create(request):
 그렇기에 위의 예시에서 필드를 지정하지 않았어도 Meta에서 model과 fields를 통하여 TestForm이 가지고 있는 필드 전부를 그대로 받는다.
 
 
-## Meta class
+### Meta class
 
 Meta class는 ModelForm의 정보를 작성하는 곳으로 모델의 필드를 그대로 가져오는데,
 
@@ -102,8 +103,11 @@ forms.py에서 적용시키고 싶은 필드 내부에 다음과 같이 작성�
 
 'widget=forms.PasswordInput()'
 
-https://docs.djangoproject.com/en/5.1/ref/forms/widgets/#numberinput 에서 widget의 종류를 확인할 수 있다.
+[widget 종류](https://docs.djangoproject.com/en/5.1/ref/forms/widgets/#numberinput)
 
+에서 widget의 종류를 확인할 수 있다.
+
+---
 
 ## form으로 변경 후의 GET, POST 처리
 
@@ -151,7 +155,7 @@ def register_member(request):
     context = {
         'form': form,
     }
-    return render(request, 'member/register.html', context)
+    return render(request, 'members/register.html', context)
 ```
 
 is_valid()는 유효성검사를 하는 메서드이다.
@@ -181,12 +185,14 @@ def update_member(request, pk):
     context = {
         'form': form,
     }
-    return render(request, 'member/update.html', context)
+    return render(request, 'members/update.html', context)
 ```
 
 위의 코드를 살펴보면 TestForm(instance=member)라는 코드가 추가되었다.
 
 form에 instance를 명시해줌으로써 기존에 존재했던 member로 변경하여 수정하는 코드로 바뀌게 된다.
+
+---
 
 ### 번외 Form rendering options
 
@@ -205,8 +211,10 @@ context에 form을 담았기 때문에 {{form}} 으로도 출력이 되지만
 
 위에서 작성한 것처럼 {{ form.as_p }} 로도 가능하다.
 
-form.as 에는 table, p, ul이 있고, 이를 적용하면 태그 안의 데이터로 만들어진다.
+form.as 에는 as_table, as_p, as_ul이 있고, 이를 적용하면 태그 안의 데이터로 만들어진다.
 
 <br>
 
-https://docs.djangoproject.com/en/4.2/topics/forms/#form-rendering-options
+[필드 그룹 종류](https://docs.djangoproject.com/en/5.1/ref/forms/api/#django.forms.BoundField.as_field_group)
+
+의 Default rendering에서 확인할 수 있다.
