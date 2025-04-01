@@ -32,13 +32,13 @@ def new(request):
     context = {
         'form': form,
     }
-    return render(request, 'test/new.html', context)
+    return render(request, 'test/register.html', context)
 ```
 
 ``` html
-<!-- test/new.html -->
-<form action="{% url 'test:create' %}" method="POST">
-    {% csrf token %}
+<!-- test/register.html -->
+<form action="{% url 'test:register' %}" method="POST">
+    {% csrf_token %}
     {{ form }}
     <input type="submit">
 </form>
@@ -74,17 +74,17 @@ from .forms import TestForm
 def create(request):
     form = TestForm(request.POST)
     if form.is_valid():
-        article = form.save()
+        member = form.save()
         return redirect('test:end')
     context = {
         'form': form,
     }
-    return render(request, 'test/new.html', context)
+    return render(request, 'test/register.html', context)
 ```
 
 두번째 코드는 ModelForm을 사용하여 Model과 연결된 Form을 자동으로 생성해준다.
 
-그렇기에 필드를 지정하지 않았어도 TestForm이 가지고 있는 필드를 그대로 받는다.
+그렇기에 위의 예시에서 필드를 지정하지 않았어도 Meta에서 model과 fields를 통하여 TestForm이 가지고 있는 필드 전부를 그대로 받는다.
 
 
 ## Meta class
@@ -103,3 +103,110 @@ forms.py에서 적용시키고 싶은 필드 내부에 다음과 같이 작성�
 'widget=forms.PasswordInput()'
 
 https://docs.djangoproject.com/en/5.1/ref/forms/widgets/#numberinput 에서 widget의 종류를 확인할 수 있다.
+
+
+## form으로 변경 후의 GET, POST 처리
+
+회원을 등록한다고 가정해보자.
+
+view 함수에는 두가지 로직이 필요한데,
+
+GET으로 돌아가는 로직과 POST로 돌아가는 로직이 필요하다.
+
+POST로 들어온다면 회원을 등록하고 페이지를 리턴해야하고,
+
+GET으로 들어온다면 회원의 정보를 적을 페이지를 넘겨주어야한다.
+
+``` python
+def register_member_get(request):
+    form = TestForm()
+    context= {
+        'form': form,
+    }
+    return render(request, 'members/register.html', context)
+
+
+def register_member_post(request):
+    form = TestForm(request.POST)
+    if form.is_valid():
+        member = form.save()
+        return redirect('member:detail', member.pk)
+    context= {
+        'form': form,
+    }
+    return render(request, 'members/register.html', context)
+```
+
+위의 두 메서드에서 같은 부분을 모아서 하나로 처리하면 다음의 코드와 같아진다.
+
+``` python
+def register_member(request):
+    if request.method == 'POST':
+        form = TestForm(request.POST)
+        if form.is_valid():
+            member = form.save()
+            return redirect('member:detail', member.pk)
+    else:
+        form = TestForm()
+    context = {
+        'form': form,
+    }
+    return render(request, 'member/register.html', context)
+```
+
+is_valid()는 유효성검사를 하는 메서드이다.
+
+modelForm으로 생성했다면 해당 필드를 생성할 때 제약이 그대로 걸려있다.
+
+예시로 name이 forms.CharField(max_length=10)라면
+
+10글자 이상이거나 Char가 아닌 다른 값이 들어오면 유효성 검사를 통과하지 못한다.
+
+context는 form이 유효성 검사를 통과하지 못했을 때 해당 form을 그대로 담아서 다시 반환하고,
+
+GET에서 비어있는 form일때도 그 상태로 반환하면 된다.
+
+그럼 생성이 아닌 정보를 수정하는 코드도 같은지 살펴보자.
+
+``` python
+def update_member(request, pk):
+    member = Test.objects.get(pk=pk)
+    if request.method == 'POST':
+        form = TestForm(request.POST, instance=member)
+        if form.is_valid():
+            form.save()
+            return redirect('member:detail', member.pk)
+    else:
+        form = TestForm(instance=member)
+    context = {
+        'form': form,
+    }
+    return render(request, 'member/update.html', context)
+```
+
+위의 코드를 살펴보면 TestForm(instance=member)라는 코드가 추가되었다.
+
+form에 instance를 명시해줌으로써 기존에 존재했던 member로 변경하여 수정하는 코드로 바뀌게 된다.
+
+### 번외 Form rendering options
+
+``` html
+<!-- test/new.html -->
+
+<h1>Test</h1>
+<form action="{% url 'test:create' %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit">
+</form>
+```
+
+context에 form을 담았기 때문에 {{form}} 으로도 출력이 되지만
+
+위에서 작성한 것처럼 {{ form.as_p }} 로도 가능하다.
+
+form.as 에는 table, p, ul이 있고, 이를 적용하면 태그 안의 데이터로 만들어진다.
+
+<br>
+
+https://docs.djangoproject.com/en/4.2/topics/forms/#form-rendering-options
