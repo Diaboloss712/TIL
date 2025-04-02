@@ -4,6 +4,7 @@
 
 정적 파일은 이에 해당하는 자원들 중 상황에 따라 바뀌는 것이 아닌 고정된 자원을 의미한다.
 
+---
 
 ## static files 경로
 
@@ -35,6 +36,7 @@ STATICFILES_DIRS는 기본 경로 외의 추가 경로를 지정할 때 사용�
 
 STATIC_URL은 해당하는 주소를 static 파일들의 경로로 지정한다.
 
+---
 
 ## media files
 
@@ -65,7 +67,6 @@ urlpatterns = [
 
 - MEDIA_ROOT
 - MEDIA_URL
-- MEDIAFILES_DIRS
 
 ``` html
 <!-- test/register.html -->
@@ -90,20 +91,30 @@ application/x-www-form-urlencoded type으로 전송되고,
 
 에러가 발생하게 된다.
 
+---
 
 ### 번외 models에서 media 경로 설정
 
 ``` python
+# register/models.py
+from django.db import models
 
-image = models.ImageField(blank=True, upload_to='images/')
-
-def test_image_path(instance, filename):
-    return f'images/{instance.user.username}/{filename}
-
+class Test(models.Model):
+    name = models.CharField(max_length=10)
+    age = models.IntegerField()
+    #1 image = models.ImageField(blank=True, upload_to='images/')
+    #2
+    def test_image_path(instance, filename):
+        return f'images/{instance.name}/{filename}'
+    image = models.ImageField(blank=True, upload_to=test_image_path)
 ```
 
 model에서 위와 같이 설정하는 방법도 있다.
 
-첫번째 방벙은 models.ImageField의 upload_to를 이용하여 경로를 지정하는 방법이다.
+첫번째 방법은 models.ImageField의 upload_to를 이용하여 경로를 지정하는 방법이다.
 
 두번째 방법은 instance와 filename을 받아 해당 유저의 폴더를 생성하고 파일이름을 만드는 메서드로 구현할 수 있다.
+
+instance는 모델 인스턴스가 생성되는 시점에 pk를 제외한 값들을 가지고 있다.
+
+filename의 경우는 file에 해당하는 name을 filename으로 받아서 입력해주기 때문에 문제가 발생하지 않는다.
