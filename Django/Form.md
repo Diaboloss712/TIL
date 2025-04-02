@@ -28,7 +28,7 @@ class TestForm(forms.Form):
 from .forms import TestForm
 
 
-def new(request):
+def register_member_get(request):
     form = TestForm()
     context = {
         'form': form,
@@ -51,7 +51,7 @@ forms.py는 form들을 모아두는 역할을 한다.
 
 views.py에서는 form 인스턴스를 새로 생성하여 context에 담아 내보낸다.
 
-new.html에서는 csrf 토큰 검사와 {{ form }}이 있는데,
+register.html에서는 csrf 토큰 검사와 {{ form }}이 있는데,
 
 {{ form }}은 위에서 만든 name과 age를 입력받는다.
 
@@ -72,7 +72,7 @@ class TestForm(forms.ModelForm):
 
 from .forms import TestForm
 
-def create(request):
+def register_member_post(request):
     form = TestForm(request.POST)
     if form.is_valid():
         member = form.save()
@@ -197,7 +197,7 @@ form에 instance를 명시해줌으로써 기존에 존재했던 member로 변�
 ### 번외 Form rendering options
 
 ``` html
-<!-- test/new.html -->
+<!-- test/register.html -->
 
 <h1>Test</h1>
 <form action="{% url 'test:create' %}" method="POST">
