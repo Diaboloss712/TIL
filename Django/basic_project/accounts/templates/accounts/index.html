@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1> 위치잡는중 </h1>
+    <p> 이쯤은 나중에 로고 </p>
+
+    {% if user %}
+        <a href = "{% url "accounts:logout" %}">로그아웃</a>
+    {% endif %}
+    {% else %}
+        <a href = "{% url "accounts:login" %}">로그인</a>
+{% endblock content %}
