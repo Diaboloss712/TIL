@@ -40,7 +40,7 @@ def call_mcp_tool(tool_name: str, arguments: dict):
             return
         try:
             response = json.loads(lines[-1])
-            log_message(f"\n✅ 최종 MCP 응답:\n", json.dumps(response, indent=2, ensure_ascii=False))
+            log_message(f"\n✅ 최종 MCP 응답:\n{json.dumps(response, indent=2, ensure_ascii=False)}")
             log_message(f"✅ MCP 응답 성공: {response}")
         except json.JSONDecodeError as e:
             log_message(f"❌ 응답 파싱 실패: {e}")
