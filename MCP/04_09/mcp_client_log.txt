@@ -38,3 +38,5 @@ UnicodeEncodeError: 'cp949' codec can't encode character '\U0001f310' in positio
 [2025-04-13 23:16:53.029749] 📤 MCP 요청 전송: validate_commit_convention {'message': 'feat: implement commit automation'}
 [2025-04-13 23:16:53.647624] ❌ MCP 서버 응답이 비어 있음
 [2025-04-13 23:19:20.801230] 📤 MCP 요청 전송: validate_commit_convention {'message': 'feat: implement commit automation'}
+[2025-04-13 23:19:21.476237] ❌ MCP 호출 실패: log_message() takes 1 positional argument but 2 were given
+[2025-04-13 23:22:18.605601] 📤 MCP 요청 전송: validate_commit_convention {'message': 'feat: implement commit automation'}

@@ -32,15 +32,15 @@ def call_mcp_tool(tool_name: str, arguments: dict):
         stdout, stderr = proc.communicate(json.dumps(request) + "\n", timeout=60)
 
         if stderr:
-            log_message("🐛 서버 에러 출력:\n" + stderr.strip())
+            log_message(f"🐛 서버 에러 출력:\n" + stderr.strip())
 
         lines = stdout.strip().splitlines()
         if not lines:
-            log_message("❌ MCP 서버 응답이 비어 있음")
+            log_message(f"❌ MCP 서버 응답이 비어 있음")
             return
         try:
             response = json.loads(lines[-1])
-            log_message("\n✅ 최종 MCP 응답:\n", json.dumps(response, indent=2, ensure_ascii=False))
+            log_message(f"\n✅ 최종 MCP 응답:\n", json.dumps(response, indent=2, ensure_ascii=False))
             log_message(f"✅ MCP 응답 성공: {response}")
         except json.JSONDecodeError as e:
             log_message(f"❌ 응답 파싱 실패: {e}")
