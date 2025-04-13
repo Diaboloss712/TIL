@@ -1,0 +1,40 @@
+[2025-04-13 23:01:52.114873] ❌ MCP 클라이언트 테스트 실행 중 예외 발생: Command '['C:\\Users\\Dia\\TIL\\MCP\\04_09\\venv_client\\Scripts\\python.exe', 'mcp_server.py']' timed out after 30 seconds
+[2025-04-13 23:01:52.115703] ❌ MCP 클라이언트 테스트 실행 중 예외 발생: cannot access local variable 'stdout' where it is not associated with a value
+[2025-04-13 23:04:38.350276] ❌ MCP 클라이언트 테스트 실행 중 예외 발생: Command '['C:\\Users\\Dia\\TIL\\MCP\\04_09\\venv_client\\Scripts\\python.exe', 'mcp_server.py']' timed out after 60 seconds
+[2025-04-13 23:04:38.356132] ❌ MCP 클라이언트 테스트 실행 중 예외 발생: cannot access local variable 'stdout' where it is not associated with a value
+[2025-04-13 23:06:33.665106] ❌ MCP 클라이언트 실행 중 Timeout: Command '['C:\\Users\\Dia\\TIL\\MCP\\04_09\\venv_client\\Scripts\\python.exe', 'mcp_server.py']' timed out after 60 seconds
+[2025-04-13 23:11:08.775781] ❌ 응답 파싱 오류: Expecting value: line 1 column 1 (char 0)
+[2025-04-13 23:11:08.776094] ⛔ 원본 출력: 
+[2025-04-13 23:11:08.776304] 🐛 에러 출력: Traceback (most recent call last):
+  File "C:\Users\Dia\TIL\MCP\04_09\mcp_server.py", line 167, in <module>
+    print("\U0001f310 MCP stdio mode started", flush=True)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'cp949' codec can't encode character '\U0001f310' in position 0: illegal multibyte sequence
+
+[2025-04-13 23:12:06.688922] 📤 MCP 요청 전송: validate_commit_convention {'message': 'feat: implement commit automation'}
+[2025-04-13 23:12:07.377497] 🐛 서버 에러 출력:
+Traceback (most recent call last):
+  File "C:\Users\Dia\TIL\MCP\04_09\mcp_server.py", line 167, in <module>
+    print("\U0001f310 MCP stdio mode started", flush=True)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'cp949' codec can't encode character '\U0001f310' in position 0: illegal multibyte sequence
+[2025-04-13 23:12:07.377846] ❌ MCP 호출 실패: list index out of range
+[2025-04-13 23:13:23.122551] 📤 MCP 요청 전송: validate_commit_convention {'message': 'feat: implement commit automation'}
+[2025-04-13 23:13:23.544200] 🐛 서버 에러 출력:
+Traceback (most recent call last):
+  File "C:\Users\Dia\TIL\MCP\04_09\mcp_server.py", line 167, in <module>
+    print("\U0001f310 MCP stdio mode started", flush=True)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'cp949' codec can't encode character '\U0001f310' in position 0: illegal multibyte sequence
+[2025-04-13 23:13:23.544401] ❌ MCP 호출 실패: list index out of range
+[2025-04-13 23:15:11.914290] 📤 MCP 요청 전송: validate_commit_convention {'message': 'feat: implement commit automation'}
+[2025-04-13 23:15:12.379650] 🐛 서버 에러 출력:
+Traceback (most recent call last):
+  File "C:\Users\Dia\TIL\MCP\04_09\mcp_server.py", line 167, in <module>
+    print("\U0001f310 MCP stdio mode started", flush=True)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'cp949' codec can't encode character '\U0001f310' in position 0: illegal multibyte sequence
+[2025-04-13 23:15:12.379856] ❌ MCP 서버 응답이 비어 있음
+[2025-04-13 23:16:53.029749] 📤 MCP 요청 전송: validate_commit_convention {'message': 'feat: implement commit automation'}
+[2025-04-13 23:16:53.647624] ❌ MCP 서버 응답이 비어 있음
+[2025-04-13 23:19:20.801230] 📤 MCP 요청 전송: validate_commit_convention {'message': 'feat: implement commit automation'}
