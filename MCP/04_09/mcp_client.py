@@ -20,8 +20,8 @@ def call_mcp_tool(tool_name: str, arguments: dict):
 
     try:
         proc = subprocess.Popen(
-            # [PYTHON_PATH, "mcp_server.py"],
-            [PYTHON_PATH, "mcp_test.py"],
+            [PYTHON_PATH, "mcp_server.py"],
+            # [PYTHON_PATH, "mcp_test.py"],
             stdin=subprocess.PIPE,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,

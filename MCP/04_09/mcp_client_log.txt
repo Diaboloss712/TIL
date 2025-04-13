@@ -42,3 +42,21 @@ UnicodeEncodeError: 'cp949' codec can't encode character '\U0001f310' in positio
 [2025-04-13 23:22:18.605601] 📤 MCP 요청 전송: validate_commit_convention {'message': 'feat: implement commit automation'}
 [2025-04-13 23:22:19.234404] ❌ MCP 호출 실패: log_message() takes 1 positional argument but 2 were given
 [2025-04-13 23:24:22.737958] 📤 MCP 요청 전송: validate_commit_convention {'message': 'feat: implement commit automation'}
+[2025-04-13 23:24:23.307232] 
+✅ 최종 MCP 응답:
+{
+  "status": "success",
+  "message": "커밋 완료"
+}
+[2025-04-13 23:24:23.307805] ✅ MCP 응답 성공: {'status': 'success', 'message': '커밋 완료'}
+[2025-04-13 23:25:02.644239] 📤 MCP 요청 전송: validate_commit_convention {'message': 'feat: implement commit automation'}
+[2025-04-13 23:25:03.117196] ❌ MCP 서버 응답이 비어 있음
+[2025-04-13 23:28:18.504484] 📤 MCP 요청 전송: validate_commit_convention {'message': 'feat: implement commit automation'}
+[2025-04-13 23:28:19.113688] ❌ MCP 서버 응답이 비어 있음
+[2025-04-13 23:29:57.840944] 📤 MCP 요청 전송: validate_commit_convention {'message': 'feat: implement commit automation'}
+[2025-04-13 23:30:57.844831] ❌ MCP 호출 Timeout: Command '['C:\\Users\\Dia\\TIL\\MCP\\04_09\\venv_client\\Scripts\\python.exe', 'mcp_server.py']' timed out after 60 seconds
+[2025-04-13 23:31:31.013569] 📤 MCP 요청 전송: validate_commit_convention {'message': 'feat: implement commit automation'}
+[2025-04-13 23:31:31.856085] ❌ MCP 서버 응답이 비어 있음
+[2025-04-13 23:33:23.692833] 📤 MCP 요청 전송: validate_commit_convention {'message': 'feat: implement commit automation'}
+[2025-04-13 23:33:24.265522] ❌ MCP 서버 응답이 비어 있음
+[2025-04-13 23:33:46.226849] 📤 MCP 요청 전송: validate_commit_convention {'message': 'feat: implement commit automation'}

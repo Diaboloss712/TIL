@@ -162,19 +162,22 @@ async def dispatch_tool(tool_call: Dict[str, Any]) -> dict:
     return {"error": f"도구 '{name}'를 처리할 수 없습니다."}
 
 # ✅ MCP 서버 직접 stdio 처리 루프
+# if __name__ == "__main__":
+#     log_message("🔌 MCP 서버 시작 준비")
+#     while True:
+#         try:
+#             line = sys.stdin.readline()
+#             if not line:
+#                 break
+#             request = json.loads(line)
+#             if "tool_call" in request:
+#                 result = asyncio.run(mcp.handle(request["tool_call"]))
+#         except Exception as e:
+#             log_message(f"❌ 서버 처리 중 예외 발생: {e}")
 if __name__ == "__main__":
-    log_message("🔌 MCP 서버 시작 준비")
-    while True:
-        try:
-            line = sys.stdin.readline()
-            if not line:
-                break
-            request = json.loads(line)
-            if "tool_call" in request:
-                result = asyncio.run(mcp.handle(request["tool_call"]))
-        except Exception as e:
-            log_message(f"❌ 서버 처리 중 예외 발생: {e}")
-
+    import asyncio
+    result = asyncio.run(validate_commit_convention("feat: manual commit"))
+    print("테스트 출력:", result)
 
 
 # # server.py (MCP 기반 with 상세 로그)
