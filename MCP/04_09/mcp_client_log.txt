@@ -60,3 +60,7 @@ UnicodeEncodeError: 'cp949' codec can't encode character '\U0001f310' in positio
 [2025-04-13 23:33:23.692833] 📤 MCP 요청 전송: validate_commit_convention {'message': 'feat: implement commit automation'}
 [2025-04-13 23:33:24.265522] ❌ MCP 서버 응답이 비어 있음
 [2025-04-13 23:33:46.226849] 📤 MCP 요청 전송: validate_commit_convention {'message': 'feat: implement commit automation'}
+[2025-04-13 23:33:50.184159] 🐛 서버 에러 출력:
+To https://github.com/Diaboloss712/TIL.git
+   453ff54a..b369fe64  master -> master
+[2025-04-13 23:33:50.184514] ❌ 응답 파싱 실패: Expecting value: line 1 column 1 (char 0)
