@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi_mcp import FastApiMCP
 import subprocess
 import httpx
@@ -14,13 +14,12 @@ from datetime import timezone
 
 # 설정 값
 PORT = "8000"
-HOST = "127.0.0.1"
+HOST = "0.0.0.0"
 app = FastAPI()
 mcp = FastApiMCP(
     app,
     name="commit-tools",
     description="commit-tools with Local LLM",
-    base_url=f"http://{HOST}:{PORT}",
     describe_full_response_schema=True,
     describe_all_responses=True,
 )
@@ -36,6 +35,44 @@ HEADERS = {
     "Authorization": f"token {GITHUB_TOKEN}",
     "Accept": "application/vnd.github.v3+json"
 }
+
+@app.post("/tools/define")
+def define_tools():
+    return {
+        "tools": [
+            {
+                "name": "check_commit_activity",
+                "description": "오늘 GitHub에 커밋이 있었는지 확인합니다.",
+                "parameters": {}
+            },
+            {
+                "name": "commit_if_needed",
+                "description": "오늘 커밋이 없으면 자동 커밋을 수행합니다.",
+                "parameters": {}
+            },
+            {
+                "name": "batch_commit",
+                "description": "변경된 파일을 커밋하고 push 합니다.",
+                "parameters": {}
+            }
+        ]
+    }
+
+@app.post("/tools/call")
+async def call_tool(request: Request):
+    body = await request.json()
+    name = body.get("name")
+    args = body.get("arguments", {})
+
+    if name == "check_commit_activity":
+        return check_commit_activity()
+    elif name == "commit_if_needed":
+        return await commit_if_needed()
+    elif name == "batch_commit":
+        return await batch_commit()
+    else:
+        return {"error": f"Unknown tool: {name}"}
+
 
 # 로깅 함수
 def log_message(msg: str):
@@ -173,6 +210,9 @@ async def commit_if_needed():
 # MCP 마운트
 mcp.mount()
 mcp.setup_server()
+
+for tool in mcp.tools:
+    print(f" - {tool.name}: {tool.description}")
 
 if __name__ == "__main__":
     try:
