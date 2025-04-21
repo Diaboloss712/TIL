@@ -1,5 +1,5 @@
-from fastapi_mcp import FastApiMCP
 from fastapi import FastAPI
+from fastapi_mcp import FastApiMCP
 import subprocess
 import httpx
 import os
@@ -9,6 +9,8 @@ from dotenv import load_dotenv
 import uvicorn
 from pathlib import Path
 import traceback
+import requests
+from datetime import timezone
 
 # 설정 값
 PORT = "8000"
@@ -29,6 +31,11 @@ GITHUB_USERNAME = os.getenv("GITHUB_USERNAME")
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434")
 LOG_FILE = os.getenv("LOG_FILE", "mcp_commit_log.txt")
+
+HEADERS = {
+    "Authorization": f"token {GITHUB_TOKEN}",
+    "Accept": "application/vnd.github.v3+json"
+}
 
 # 로깅 함수
 def log_message(msg: str):
@@ -121,32 +128,47 @@ def commit_file(file: str) -> Dict[str, Any]:
         log_message(f"❌ Git 명령 실패({file}): {e}")
     return result
 
-# 배치 커밋
-@app.post("/commit/batch/", operation_id="batch_commit", description="파일별 커밋 및 자동 push 수행")
-async def batch_commit() -> Dict[str, Any]:
+@app.get("/github/check_commit", operation_id="check_commit_activity", description="오늘 GitHub에 커밋이 있었는지 확인합니다.")
+def check_commit_activity():
+    today = datetime.datetime.now(timezone.utc).date()
+    url = f"https://api.github.com/users/{GITHUB_USERNAME}/events"
     try:
-        results = []
-        files = get_modified_files()
-        if not files:
-            return {"status": "no_changes", "message": "변경된 파일이 없습니다."}
-
-        for file in files:
-            res = commit_file(file)
-            results.append(res)
-
-        try:
-            subprocess.run(["git", "push"], cwd=str(REPO_PATH), check=True)
-            push_status = "pushed"
-            log_message("🌐 모든 커밋 후 push 완료")
-        except subprocess.CalledProcessError as e:
-            push_status = f"push error: {e}"
-            log_message(f"❌ push 실패: {e}")
-
-        return {"status": "done", "push_status": push_status, "details": results}
-
+        response = requests.get(url, headers=HEADERS)
+        response.raise_for_status()
+        events = response.json()
+        for event in events:
+            if event["type"] == "PushEvent":
+                pushed_date = datetime.datetime.strptime(event["created_at"], "%Y-%m-%dT%H:%M:%SZ").date()
+                if pushed_date == today:
+                    return {"status": "committed", "message": "오늘 GitHub에 커밋이 존재합니다."}
+        return {"status": "no_commit", "message": "오늘 GitHub에 커밋 기록이 없습니다."}
     except Exception as e:
-        log_message(f"❌ batch_commit 예외: {e}\n{traceback.format_exc()}")
-        return {"status": "error", "message": str(e)}
+        return {"status": "error", "message": f"GitHub API 오류: {e}"}
+
+@app.post("/commit/batch", operation_id="batch_commit", description="변경된 파일을 커밋하고 push 합니다.")
+async def batch_commit():
+    results = []
+    files = get_modified_files()
+    if not files:
+        return {"status": "no_changes", "message": "변경된 파일이 없습니다."}
+    for file in files:
+        res = commit_file(file)
+        results.append(res)
+    try:
+        subprocess.run(["git", "push"], cwd=str(REPO_PATH), check=True)
+        push_status = "pushed"
+        log_message("🌐 모든 커밋 후 push 완료")
+    except subprocess.CalledProcessError as e:
+        push_status = f"push error: {e}"
+        log_message(f"❌ push 실패: {e}")
+    return {"status": "done", "push_status": push_status, "details": results}
+
+@app.post("/commit/daily", operation_id="commit_if_needed", description="오늘 커밋이 없으면 자동 커밋 및 push 수행")
+async def commit_if_needed():
+    status = check_commit_activity()
+    if status["status"] == "committed":
+        return {"status": "skipped", "message": "이미 커밋이 존재합니다."}
+    return await batch_commit()
 
 # MCP 마운트
 mcp.mount()
