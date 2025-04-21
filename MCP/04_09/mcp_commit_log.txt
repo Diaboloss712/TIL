@@ -99,3 +99,229 @@
 [2025-04-14 21:17:45.415482] fix: resolved issue with mcp_client_log, mcp_commit_log and updated mcp_server.py
 [2025-04-14 21:17:45.416006] 🚀 validate_commit_convention 호출됨
 [2025-04-14 21:17:45.416474] 메시지: fix: resolved issue with mcp_client_log, mcp_commit_log and updated mcp_server.py
+[2025-04-14 21:17:51.406642] ✅ 커밋 & 푸시 완료됨: 'fix: resolved issue with mcp_client_log, mcp_commit_log and updated mcp_server.py'
+[2025-04-15 19:08:04.733631] 🔌 MCP 서버 시작 준비
+[2025-04-15 19:08:04.734021] 🌐 MCP 서버 주소: http://127.0.0.1:8000
+[2025-04-16 18:49:39.994132] 🔌 MCP 서버 시작 준비
+[2025-04-16 18:49:39.994575] 🌐 MCP 서버 주소: http://127.0.0.1:8000
+[2025-04-16 18:53:10.576387] 🔌 MCP 서버 시작 준비
+[2025-04-16 18:53:10.576600] 🌐 MCP 서버 주소: http://127.0.0.1:8000
+[2025-04-16 18:55:04.010300] 📁 TIL_ROOT 경로 확인: C:\Users\Dia\TIL\MCP
+[2025-04-16 18:55:04.206962] 🔍 변경 파일 목록: ['MCP/04_09/mcp_commit_log.txt', 'MCP/04_09/mcp_server.py']
+[2025-04-16 18:55:04.233397] ❌ batch_commit 예외: Command '['git', 'diff', 'MCP/04_09/mcp_commit_log.txt']' returned non-zero exit status 128.
+[2025-04-16 18:59:13.426018] 📁 TIL_ROOT 경로 확인: C:\Users\Dia\TIL\MCP
+[2025-04-16 18:59:13.600858] 🔍 변경 파일 목록: ['MCP/04_09/mcp_commit_log.txt', 'MCP/04_09/mcp_server.py']
+[2025-04-16 18:59:13.627238] ❌ batch_commit 예외: Command '['git', 'diff', 'MCP/04_09/mcp_commit_log.txt']' returned non-zero exit status 128.
+[2025-04-16 19:03:11.477957] 📁 TIL_ROOT 경로 확인: C:\Users\Dia\TIL\MCP
+[2025-04-16 19:03:11.666732] 🔍 변경 파일 목록: ['MCP/04_09/mcp_commit_log.txt', 'MCP/04_09/mcp_server.py']
+[2025-04-16 19:03:11.693824] ❌ batch_commit 예외: Command '['git', 'diff', 'MCP/04_09/mcp_commit_log.txt']' returned non-zero exit status 128.
+[2025-04-16 19:19:13.677733] 🔌 MCP 서버 시작 준비
+[2025-04-16 19:19:13.677944] 🌐 MCP 서버 주소: http://127.0.0.1:8000
+[2025-04-16 19:23:36.780082] 🔌 MCP 서버 시작 준비
+[2025-04-16 19:23:36.780303] 🌐 MCP 서버 주소: http://127.0.0.1:8000
+[2025-04-16 19:27:29.260486] 🔌 MCP 서버 시작 준비
+[2025-04-16 19:27:29.260694] 🌐 MCP 서버 주소: http://127.0.0.1:8000
+[2025-04-16 19:37:04.425807] 변경 파일 목록: ['MCP/04_09/mcp_commit_log.txt', 'MCP/04_09/mcp_server.py', '.idea/.gitignore', '.idea/.name', '.idea/TIL.iml', '.idea/inspectionProfiles/profiles_settings.xml', '.idea/modules.xml', '.idea/vcs.xml', 'Computer_Science/EIP/Requirement.md', 'Computer_Science/EIP/images/Data_Flow.png', 'Front_End/04_08/my-app/.gitignore', 'Front_End/04_08/my-app/README.md', 'Front_End/04_08/my-app/package-lock.json', 'Front_End/04_08/my-app/package.json', 'Front_End/04_08/my-app/public/favicon.ico', 'Front_End/04_08/my-app/public/index.html', 'Front_End/04_08/my-app/public/logo192.png', 'Front_End/04_08/my-app/public/logo512.png', 'Front_End/04_08/my-app/public/manifest.json', 'Front_End/04_08/my-app/public/robots.txt', 'Front_End/04_08/my-app/src/App.css', 'Front_End/04_08/my-app/src/App.test.tsx', 'Front_End/04_08/my-app/src/App.tsx', 'Front_End/04_08/my-app/src/index.css', 'Front_End/04_08/my-app/src/index.tsx', 'Front_End/04_08/my-app/src/logo.svg', 'Front_End/04_08/my-app/src/react-app-env.d.ts', 'Front_End/04_08/my-app/src/reportWebVitals.ts', 'Front_End/04_08/my-app/src/setupTests.ts', 'Front_End/04_08/my-app/tsconfig.json']
+[2025-04-16 19:37:14.861049] LLM으로부터 받은 메시지 for MCP/04_09/mcp_commit_log.txt: Based on the changes provided, a one-liner Conventional Commit message in English that follows the specified format would be:
+
+```
+fix: MCP files and Front End updates
+```
+[2025-04-16 19:37:14.861527] [형식 오류] MCP/04_09/mcp_commit_log.txt: Based on the changes provided, a one-liner Conventional Commit message in English that follows the specified format would be:
+
+```
+fix: MCP files and Front End updates
+```
+[2025-04-16 19:37:20.491100] LLM으로부터 받은 메시지 for MCP/04_09/mcp_server.py: 1. `feat: Implement batch commit functionality`
+2. `fix: Error handling for failed Git commands in batch_commit`
+3. `refactor: Modify file structure and improve code organization`
+4. `doc: Update README with changes and improvements`
+5. `test: Add new test cases for batch commit function`
+6. `style: Format code according to style guide`
+[2025-04-16 19:37:20.491410] [형식 오류] MCP/04_09/mcp_server.py: 1. `feat: Implement batch commit functionality`
+2. `fix: Error handling for failed Git commands in batch_commit`
+3. `refactor: Modify file structure and improve code organization`
+4. `doc: Update README with changes and improvements`
+5. `test: Add new test cases for batch commit function`
+6. `style: Format code according to style guide`
+[2025-04-16 19:37:20.553551] [스킵] .idea/.gitignore: 변경 내용이 없음
+[2025-04-16 19:37:20.614711] [스킵] .idea/.name: 변경 내용이 없음
+[2025-04-16 19:37:20.679399] [스킵] .idea/TIL.iml: 변경 내용이 없음
+[2025-04-16 19:37:20.751673] [스킵] .idea/inspectionProfiles/profiles_settings.xml: 변경 내용이 없음
+[2025-04-16 19:37:20.819852] [스킵] .idea/modules.xml: 변경 내용이 없음
+[2025-04-16 19:37:20.887018] [스킵] .idea/vcs.xml: 변경 내용이 없음
+[2025-04-16 19:37:20.956306] [스킵] Computer_Science/EIP/Requirement.md: 변경 내용이 없음
+[2025-04-16 19:37:21.033622] [스킵] Computer_Science/EIP/images/Data_Flow.png: 변경 내용이 없음
+[2025-04-16 19:37:21.108623] [스킵] Front_End/04_08/my-app/.gitignore: 변경 내용이 없음
+[2025-04-16 19:37:21.182590] [스킵] Front_End/04_08/my-app/README.md: 변경 내용이 없음
+[2025-04-16 19:37:21.254128] [스킵] Front_End/04_08/my-app/package-lock.json: 변경 내용이 없음
+[2025-04-16 19:37:21.325658] [스킵] Front_End/04_08/my-app/package.json: 변경 내용이 없음
+[2025-04-16 19:37:21.408301] [스킵] Front_End/04_08/my-app/public/favicon.ico: 변경 내용이 없음
+[2025-04-16 19:37:21.481978] [스킵] Front_End/04_08/my-app/public/index.html: 변경 내용이 없음
+[2025-04-16 19:37:21.553886] [스킵] Front_End/04_08/my-app/public/logo192.png: 변경 내용이 없음
+[2025-04-16 19:37:21.625716] [스킵] Front_End/04_08/my-app/public/logo512.png: 변경 내용이 없음
+[2025-04-16 19:37:21.702342] [스킵] Front_End/04_08/my-app/public/manifest.json: 변경 내용이 없음
+[2025-04-16 19:37:21.777891] [스킵] Front_End/04_08/my-app/public/robots.txt: 변경 내용이 없음
+[2025-04-16 19:37:21.850750] [스킵] Front_End/04_08/my-app/src/App.css: 변경 내용이 없음
+[2025-04-16 19:37:21.928250] [스킵] Front_End/04_08/my-app/src/App.test.tsx: 변경 내용이 없음
+[2025-04-16 19:37:22.012624] [스킵] Front_End/04_08/my-app/src/App.tsx: 변경 내용이 없음
+[2025-04-16 19:37:22.101797] [스킵] Front_End/04_08/my-app/src/index.css: 변경 내용이 없음
+[2025-04-16 19:37:22.181094] [스킵] Front_End/04_08/my-app/src/index.tsx: 변경 내용이 없음
+[2025-04-16 19:37:22.258022] [스킵] Front_End/04_08/my-app/src/logo.svg: 변경 내용이 없음
+[2025-04-16 19:37:22.336232] [스킵] Front_End/04_08/my-app/src/react-app-env.d.ts: 변경 내용이 없음
+[2025-04-16 19:37:22.414061] [스킵] Front_End/04_08/my-app/src/reportWebVitals.ts: 변경 내용이 없음
+[2025-04-16 19:37:22.493311] [스킵] Front_End/04_08/my-app/src/setupTests.ts: 변경 내용이 없음
+[2025-04-16 19:37:22.573678] [스킵] Front_End/04_08/my-app/tsconfig.json: 변경 내용이 없음
+[2025-04-16 19:37:24.607230] 🌐 모든 커밋 후 push 완료
+[2025-04-16 19:53:52.546440] 변경 파일 목록: ['MCP/04_09/mcp_commit_log.txt', 'MCP/04_09/mcp_server.py', '.idea/.gitignore', '.idea/.name', '.idea/TIL.iml', '.idea/inspectionProfiles/profiles_settings.xml', '.idea/modules.xml', '.idea/vcs.xml', 'Computer_Science/EIP/Requirement.md', 'Computer_Science/EIP/images/Data_Flow.png', 'Front_End/04_08/my-app/.gitignore', 'Front_End/04_08/my-app/README.md', 'Front_End/04_08/my-app/package-lock.json', 'Front_End/04_08/my-app/package.json', 'Front_End/04_08/my-app/public/favicon.ico', 'Front_End/04_08/my-app/public/index.html', 'Front_End/04_08/my-app/public/logo192.png', 'Front_End/04_08/my-app/public/logo512.png', 'Front_End/04_08/my-app/public/manifest.json', 'Front_End/04_08/my-app/public/robots.txt', 'Front_End/04_08/my-app/src/App.css', 'Front_End/04_08/my-app/src/App.test.tsx', 'Front_End/04_08/my-app/src/App.tsx', 'Front_End/04_08/my-app/src/index.css', 'Front_End/04_08/my-app/src/index.tsx', 'Front_End/04_08/my-app/src/logo.svg', 'Front_End/04_08/my-app/src/react-app-env.d.ts', 'Front_End/04_08/my-app/src/reportWebVitals.ts', 'Front_End/04_08/my-app/src/setupTests.ts', 'Front_End/04_08/my-app/tsconfig.json']
+[2025-04-16 19:53:59.521565] LLM으로부터 받은 메시지 for MCP/04_09/mcp_commit_log.txt: "chore: Update project files and commit logs"
+[2025-04-16 19:53:59.521824] [형식 오류] MCP/04_09/mcp_commit_log.txt: "chore: Update project files and commit logs"
+[2025-04-16 19:54:03.603166] LLM으로부터 받은 메시지 for MCP/04_09/mcp_server.py: `feat: Implemented batch commit functionality and auto push`
+[2025-04-16 19:54:03.603448] [형식 오류] MCP/04_09/mcp_server.py: `feat: Implemented batch commit functionality and auto push`
+[2025-04-16 19:54:03.657405] [스킵] .idea/.gitignore: 변경 내용이 없음
+[2025-04-16 19:54:03.714722] [스킵] .idea/.name: 변경 내용이 없음
+[2025-04-16 19:54:03.772311] [스킵] .idea/TIL.iml: 변경 내용이 없음
+[2025-04-16 19:54:03.831990] [스킵] .idea/inspectionProfiles/profiles_settings.xml: 변경 내용이 없음
+[2025-04-16 19:54:03.892234] [스킵] .idea/modules.xml: 변경 내용이 없음
+[2025-04-16 19:54:03.951942] [스킵] .idea/vcs.xml: 변경 내용이 없음
+[2025-04-16 19:54:04.012962] [스킵] Computer_Science/EIP/Requirement.md: 변경 내용이 없음
+[2025-04-16 19:54:04.464602] [스킵] Computer_Science/EIP/images/Data_Flow.png: 변경 내용이 없음
+[2025-04-16 19:54:04.647671] [스킵] Front_End/04_08/my-app/.gitignore: 변경 내용이 없음
+[2025-04-16 19:54:05.521525] [스킵] Front_End/04_08/my-app/README.md: 변경 내용이 없음
+[2025-04-16 19:54:06.207419] [스킵] Front_End/04_08/my-app/package-lock.json: 변경 내용이 없음
+[2025-04-16 19:54:06.871079] [스킵] Front_End/04_08/my-app/package.json: 변경 내용이 없음
+[2025-04-16 19:54:06.992441] [스킵] Front_End/04_08/my-app/public/favicon.ico: 변경 내용이 없음
+[2025-04-16 19:54:07.095691] [스킵] Front_End/04_08/my-app/public/index.html: 변경 내용이 없음
+[2025-04-16 19:54:07.181646] [스킵] Front_End/04_08/my-app/public/logo192.png: 변경 내용이 없음
+[2025-04-16 19:54:07.248752] [스킵] Front_End/04_08/my-app/public/logo512.png: 변경 내용이 없음
+[2025-04-16 19:54:07.317007] [스킵] Front_End/04_08/my-app/public/manifest.json: 변경 내용이 없음
+[2025-04-16 19:54:07.390978] [스킵] Front_End/04_08/my-app/public/robots.txt: 변경 내용이 없음
+[2025-04-16 19:54:07.461367] [스킵] Front_End/04_08/my-app/src/App.css: 변경 내용이 없음
+[2025-04-16 19:54:07.529685] [스킵] Front_End/04_08/my-app/src/App.test.tsx: 변경 내용이 없음
+[2025-04-16 19:54:07.600675] [스킵] Front_End/04_08/my-app/src/App.tsx: 변경 내용이 없음
+[2025-04-16 19:54:07.670307] [스킵] Front_End/04_08/my-app/src/index.css: 변경 내용이 없음
+[2025-04-16 19:54:07.739776] [스킵] Front_End/04_08/my-app/src/index.tsx: 변경 내용이 없음
+[2025-04-16 19:54:07.812838] [스킵] Front_End/04_08/my-app/src/logo.svg: 변경 내용이 없음
+[2025-04-16 19:54:07.887780] [스킵] Front_End/04_08/my-app/src/react-app-env.d.ts: 변경 내용이 없음
+[2025-04-16 19:54:07.963126] [스킵] Front_End/04_08/my-app/src/reportWebVitals.ts: 변경 내용이 없음
+[2025-04-16 19:54:08.034374] [스킵] Front_End/04_08/my-app/src/setupTests.ts: 변경 내용이 없음
+[2025-04-16 19:54:08.106891] [스킵] Front_End/04_08/my-app/tsconfig.json: 변경 내용이 없음
+[2025-04-16 19:54:10.250952] 🌐 모든 커밋 후 push 완료
+[2025-04-16 19:56:49.291420] 변경 파일 목록: ['MCP/04_09/mcp_commit_log.txt', 'MCP/04_09/mcp_server.py', '.idea/.gitignore', '.idea/.name', '.idea/TIL.iml', '.idea/inspectionProfiles/profiles_settings.xml', '.idea/modules.xml', '.idea/vcs.xml', 'Computer_Science/EIP/Requirement.md', 'Computer_Science/EIP/images/Data_Flow.png', 'Front_End/04_08/my-app/.gitignore', 'Front_End/04_08/my-app/README.md', 'Front_End/04_08/my-app/package-lock.json', 'Front_End/04_08/my-app/package.json', 'Front_End/04_08/my-app/public/favicon.ico', 'Front_End/04_08/my-app/public/index.html', 'Front_End/04_08/my-app/public/logo192.png', 'Front_End/04_08/my-app/public/logo512.png', 'Front_End/04_08/my-app/public/manifest.json', 'Front_End/04_08/my-app/public/robots.txt', 'Front_End/04_08/my-app/src/App.css', 'Front_End/04_08/my-app/src/App.test.tsx', 'Front_End/04_08/my-app/src/App.tsx', 'Front_End/04_08/my-app/src/index.css', 'Front_End/04_08/my-app/src/index.tsx', 'Front_End/04_08/my-app/src/logo.svg', 'Front_End/04_08/my-app/src/react-app-env.d.ts', 'Front_End/04_08/my-app/src/reportWebVitals.ts', 'Front_End/04_08/my-app/src/setupTests.ts', 'Front_End/04_08/my-app/tsconfig.json']
+[2025-04-16 19:56:53.775941] LLM으로부터 받은 메시지 for MCP/04_09/mcp_commit_log.txt: "chore: Update project files and commit logs"
+[2025-04-16 19:56:53.776225] [형식 오류] MCP/04_09/mcp_commit_log.txt: "chore: Update project files and commit logs"
+[2025-04-16 19:56:58.965998] LLM으로부터 받은 메시지 for MCP/04_09/mcp_server.py: 1. `feat: Updated batch commit functionality for generating Conventional Commit messages`
+   2. `fix: Fixed error in batch commit when no changes detected`
+   3. `refactor: Refactored code structure in batch commit to improve readability and maintainability`
+[2025-04-16 19:56:58.966276] [형식 오류] MCP/04_09/mcp_server.py: 1. `feat: Updated batch commit functionality for generating Conventional Commit messages`
+   2. `fix: Fixed error in batch commit when no changes detected`
+   3. `refactor: Refactored code structure in batch commit to improve readability and maintainability`
+[2025-04-16 19:56:59.023471] [스킵] .idea/.gitignore: 변경 내용이 없음
+[2025-04-16 19:56:59.086554] [스킵] .idea/.name: 변경 내용이 없음
+[2025-04-16 19:56:59.147158] [스킵] .idea/TIL.iml: 변경 내용이 없음
+[2025-04-16 19:56:59.213521] [스킵] .idea/inspectionProfiles/profiles_settings.xml: 변경 내용이 없음
+[2025-04-16 19:56:59.278171] [스킵] .idea/modules.xml: 변경 내용이 없음
+[2025-04-16 19:56:59.342810] [스킵] .idea/vcs.xml: 변경 내용이 없음
+[2025-04-16 19:56:59.406765] [스킵] Computer_Science/EIP/Requirement.md: 변경 내용이 없음
+[2025-04-16 19:56:59.471688] [스킵] Computer_Science/EIP/images/Data_Flow.png: 변경 내용이 없음
+[2025-04-16 19:56:59.536947] [스킵] Front_End/04_08/my-app/.gitignore: 변경 내용이 없음
+[2025-04-16 19:56:59.602302] [스킵] Front_End/04_08/my-app/README.md: 변경 내용이 없음
+[2025-04-16 19:56:59.669013] [스킵] Front_End/04_08/my-app/package-lock.json: 변경 내용이 없음
+[2025-04-16 19:56:59.750227] [스킵] Front_End/04_08/my-app/package.json: 변경 내용이 없음
+[2025-04-16 19:56:59.829148] [스킵] Front_End/04_08/my-app/public/favicon.ico: 변경 내용이 없음
+[2025-04-16 19:56:59.903089] [스킵] Front_End/04_08/my-app/public/index.html: 변경 내용이 없음
+[2025-04-16 19:56:59.976030] [스킵] Front_End/04_08/my-app/public/logo192.png: 변경 내용이 없음
+[2025-04-16 19:57:00.060549] [스킵] Front_End/04_08/my-app/public/logo512.png: 변경 내용이 없음
+[2025-04-16 19:57:00.137128] [스킵] Front_End/04_08/my-app/public/manifest.json: 변경 내용이 없음
+[2025-04-16 19:57:00.209178] [스킵] Front_End/04_08/my-app/public/robots.txt: 변경 내용이 없음
+[2025-04-16 19:57:00.279555] [스킵] Front_End/04_08/my-app/src/App.css: 변경 내용이 없음
+[2025-04-16 19:57:00.349411] [스킵] Front_End/04_08/my-app/src/App.test.tsx: 변경 내용이 없음
+[2025-04-16 19:57:00.420915] [스킵] Front_End/04_08/my-app/src/App.tsx: 변경 내용이 없음
+[2025-04-16 19:57:00.491639] [스킵] Front_End/04_08/my-app/src/index.css: 변경 내용이 없음
+[2025-04-16 19:57:00.576146] [스킵] Front_End/04_08/my-app/src/index.tsx: 변경 내용이 없음
+[2025-04-16 19:57:00.675974] [스킵] Front_End/04_08/my-app/src/logo.svg: 변경 내용이 없음
+[2025-04-16 19:57:00.755775] [스킵] Front_End/04_08/my-app/src/react-app-env.d.ts: 변경 내용이 없음
+[2025-04-16 19:57:00.836671] [스킵] Front_End/04_08/my-app/src/reportWebVitals.ts: 변경 내용이 없음
+[2025-04-16 19:57:00.911600] [스킵] Front_End/04_08/my-app/src/setupTests.ts: 변경 내용이 없음
+[2025-04-16 19:57:00.983212] [스킵] Front_End/04_08/my-app/tsconfig.json: 변경 내용이 없음
+[2025-04-16 19:57:02.337693] 🌐 모든 커밋 후 push 완료
+[2025-04-21 20:02:29.257640] 🔌 MCP 서버 시작 준비
+[2025-04-21 20:02:29.262717] 🌐 MCP 서버 주소: http://127.0.0.1:8000
+[2025-04-21 20:08:46.632507] 🔌 MCP 서버 시작 준비
+[2025-04-21 20:08:46.632717] 🌐 MCP 서버 주소: http://127.0.0.1:8000
+[2025-04-21 20:10:05.112929] 변경 파일 목록: ['MCP/04_09/mcp_commit_log.txt', 'MCP/04_09/mcp_server.py', '.idea/.gitignore', '.idea/.name', '.idea/TIL.iml', '.idea/inspectionProfiles/profiles_settings.xml', '.idea/modules.xml', '.idea/vcs.xml', 'Computer_Science/EIP/Requirement.md', 'Computer_Science/EIP/images/Data_Flow.png', 'Front_End/04_08/my-app/.gitignore', 'Front_End/04_08/my-app/README.md', 'Front_End/04_08/my-app/package-lock.json', 'Front_End/04_08/my-app/package.json', 'Front_End/04_08/my-app/public/favicon.ico', 'Front_End/04_08/my-app/public/index.html', 'Front_End/04_08/my-app/public/logo192.png', 'Front_End/04_08/my-app/public/logo512.png', 'Front_End/04_08/my-app/public/manifest.json', 'Front_End/04_08/my-app/public/robots.txt', 'Front_End/04_08/my-app/src/App.css', 'Front_End/04_08/my-app/src/App.test.tsx', 'Front_End/04_08/my-app/src/App.tsx', 'Front_End/04_08/my-app/src/index.css', 'Front_End/04_08/my-app/src/index.tsx', 'Front_End/04_08/my-app/src/logo.svg', 'Front_End/04_08/my-app/src/react-app-env.d.ts', 'Front_End/04_08/my-app/src/reportWebVitals.ts', 'Front_End/04_08/my-app/src/setupTests.ts', 'Front_End/04_08/my-app/tsconfig.json']
+[2025-04-21 20:10:14.891325] LLM으로부터 받은 메시지 for MCP/04_09/mcp_commit_log.txt: Based on the changes listed, a one-liner Conventional Commit message in English following the specified format could be:
+
+    `update: files updated for frontend app`
+[2025-04-21 20:10:14.891681] [형식 오류] MCP/04_09/mcp_commit_log.txt: Based on the changes listed, a one-liner Conventional Commit message in English following the specified format could be:
+
+    `update: files updated for frontend app`
+[2025-04-21 20:10:22.292222] LLM으로부터 받은 메시지 for MCP/04_09/mcp_server.py: fix: Added requests library for GitHub API calls and added check_commit_activity endpoint to determine if commit activity exists on a given day.
+
+  이렇게 한 줄짜리 Conventional Commit 형식의 커밋 메시지를 생성했습니다.
+  형식은 `fix:`로 시작하고, 해당 커밋에서 수행된 작업(Adding requests library for GitHub API calls and added check_commit_activity endpoint)을 설명합니다.
+  변경사항이 여러 가지일 경우 가장 핵심적인 convention(fix)을 하나만 선택하여 생성했습니다.
+[2025-04-21 20:10:22.865688] ✅ MCP/04_09/mcp_server.py 커밋됨: fix: Added requests library for GitHub API calls and added check_commit_activity endpoint to determine if commit activity exists on a given day.
+
+  이렇게 한 줄짜리 Conventional Commit 형식의 커밋 메시지를 생성했습니다.
+  형식은 `fix:`로 시작하고, 해당 커밋에서 수행된 작업(Adding requests library for GitHub API calls and added check_commit_activity endpoint)을 설명합니다.
+  변경사항이 여러 가지일 경우 가장 핵심적인 convention(fix)을 하나만 선택하여 생성했습니다.
+[2025-04-21 20:10:22.950447] [스킵] .idea/.gitignore: 변경 내용이 없음
+[2025-04-21 20:10:23.028390] [스킵] .idea/.name: 변경 내용이 없음
+[2025-04-21 20:10:23.093517] [스킵] .idea/TIL.iml: 변경 내용이 없음
+[2025-04-21 20:10:23.159926] [스킵] .idea/inspectionProfiles/profiles_settings.xml: 변경 내용이 없음
+[2025-04-21 20:10:23.227329] [스킵] .idea/modules.xml: 변경 내용이 없음
+[2025-04-21 20:10:23.292710] [스킵] .idea/vcs.xml: 변경 내용이 없음
+[2025-04-21 20:10:23.360461] [스킵] Computer_Science/EIP/Requirement.md: 변경 내용이 없음
+[2025-04-21 20:10:23.435985] [스킵] Computer_Science/EIP/images/Data_Flow.png: 변경 내용이 없음
+[2025-04-21 20:10:23.551214] [스킵] Front_End/04_08/my-app/.gitignore: 변경 내용이 없음
+[2025-04-21 20:10:23.678341] [스킵] Front_End/04_08/my-app/README.md: 변경 내용이 없음
+[2025-04-21 20:10:23.776625] [스킵] Front_End/04_08/my-app/package-lock.json: 변경 내용이 없음
+[2025-04-21 20:10:23.869218] [스킵] Front_End/04_08/my-app/package.json: 변경 내용이 없음
+[2025-04-21 20:10:23.957033] [스킵] Front_End/04_08/my-app/public/favicon.ico: 변경 내용이 없음
+[2025-04-21 20:10:24.039547] [스킵] Front_End/04_08/my-app/public/index.html: 변경 내용이 없음
+[2025-04-21 20:10:24.122382] [스킵] Front_End/04_08/my-app/public/logo192.png: 변경 내용이 없음
+[2025-04-21 20:10:24.205350] [스킵] Front_End/04_08/my-app/public/logo512.png: 변경 내용이 없음
+[2025-04-21 20:10:24.274250] [스킵] Front_End/04_08/my-app/public/manifest.json: 변경 내용이 없음
+[2025-04-21 20:10:24.341154] [스킵] Front_End/04_08/my-app/public/robots.txt: 변경 내용이 없음
+[2025-04-21 20:10:24.407065] [스킵] Front_End/04_08/my-app/src/App.css: 변경 내용이 없음
+[2025-04-21 20:10:24.479714] [스킵] Front_End/04_08/my-app/src/App.test.tsx: 변경 내용이 없음
+[2025-04-21 20:10:24.551578] [스킵] Front_End/04_08/my-app/src/App.tsx: 변경 내용이 없음
+[2025-04-21 20:10:24.624713] [스킵] Front_End/04_08/my-app/src/index.css: 변경 내용이 없음
+[2025-04-21 20:10:24.694652] [스킵] Front_End/04_08/my-app/src/index.tsx: 변경 내용이 없음
+[2025-04-21 20:10:24.760632] [스킵] Front_End/04_08/my-app/src/logo.svg: 변경 내용이 없음
+[2025-04-21 20:10:24.835024] [스킵] Front_End/04_08/my-app/src/react-app-env.d.ts: 변경 내용이 없음
+[2025-04-21 20:10:24.918455] [스킵] Front_End/04_08/my-app/src/reportWebVitals.ts: 변경 내용이 없음
+[2025-04-21 20:10:25.000046] [스킵] Front_End/04_08/my-app/src/setupTests.ts: 변경 내용이 없음
+[2025-04-21 20:10:25.084641] [스킵] Front_End/04_08/my-app/tsconfig.json: 변경 내용이 없음
+[2025-04-21 20:10:28.061540] 🌐 모든 커밋 후 push 완료
+[2025-04-21 20:52:54.291968] 🔌 MCP 서버 시작 준비
+[2025-04-21 20:52:54.292163] 🌐 MCP 서버 주소: http://0.0.0.0:8000
+[2025-04-21 20:56:32.201011] 🔌 MCP 서버 시작 준비
+[2025-04-21 20:56:32.201383] 🌐 MCP 서버 주소: http://0.0.0.0:8000
+[2025-04-21 21:00:51.946960] 🔌 MCP 서버 시작 준비
+[2025-04-21 21:00:51.947193] 🌐 MCP 서버 주소: http://0.0.0.0:8000
+[2025-04-21 21:02:27.095899] 🔌 MCP 서버 시작 준비
+[2025-04-21 21:02:27.096116] 🌐 MCP 서버 주소: http://0.0.0.0:8000
+[2025-04-21 21:04:14.603921] 🔌 MCP 서버 시작 준비
+[2025-04-21 21:04:14.604153] 🌐 MCP 서버 주소: http://0.0.0.0:8000
+[2025-04-21 21:17:19.996304] 🔌 MCP 서버 시작 준비
+[2025-04-21 21:17:19.996501] 🌐 MCP 서버 주소: http://0.0.0.0:8000
+[2025-04-21 21:27:11.080628] 🔌 MCP 서버 시작 준비
+[2025-04-21 21:27:11.080830] 🌐 MCP 서버 주소: http://0.0.0.0:8000
+[2025-04-21 23:27:21.250759] 🔌 MCP 서버 시작 준비
+[2025-04-21 23:27:21.252353] 🌐 MCP 서버 주소: http://0.0.0.0:8000
+[2025-04-22 00:10:48.490886] 🔌 MCP 서버 시작 준비
+[2025-04-22 00:10:48.491342] 🌐 MCP 서버 주소: http://0.0.0.0:8000
+[2025-04-22 00:13:31.173359] 🔌 MCP 서버 시작 준비
+[2025-04-22 00:13:31.174079] 🌐 MCP 서버 주소: http://0.0.0.0:8000
+[2025-04-22 00:14:00.841698] 변경 파일 목록: ['MCP/04_09/mcp_commit_log.txt', 'MCP/04_09/mcp_server.py', 'MCP/04_09/requirements.txt', '.idea/.gitignore', '.idea/.name', '.idea/TIL.iml', '.idea/inspectionProfiles/profiles_settings.xml', '.idea/modules.xml', '.idea/vcs.xml', 'Computer_Science/EIP/Requirement.md', 'Computer_Science/EIP/images/Data_Flow.png', 'Front_End/04_08/my-app/.gitignore', 'Front_End/04_08/my-app/README.md', 'Front_End/04_08/my-app/package-lock.json', 'Front_End/04_08/my-app/package.json', 'Front_End/04_08/my-app/public/favicon.ico', 'Front_End/04_08/my-app/public/index.html', 'Front_End/04_08/my-app/public/logo192.png', 'Front_End/04_08/my-app/public/logo512.png', 'Front_End/04_08/my-app/public/manifest.json', 'Front_End/04_08/my-app/public/robots.txt', 'Front_End/04_08/my-app/src/App.css', 'Front_End/04_08/my-app/src/App.test.tsx', 'Front_End/04_08/my-app/src/App.tsx', 'Front_End/04_08/my-app/src/index.css', 'Front_End/04_08/my-app/src/index.tsx', 'Front_End/04_08/my-app/src/logo.svg', 'Front_End/04_08/my-app/src/react-app-env.d.ts', 'Front_End/04_08/my-app/src/reportWebVitals.ts', 'Front_End/04_08/my-app/src/setupTests.ts', 'Front_End/04_08/my-app/tsconfig.json']
+[2025-04-22 00:14:16.090623] LLM으로부터 받은 메시지 for MCP/04_09/mcp_commit_log.txt: refactor: Updated MCP server and dependencies in mcp_commit_log.txt, mcp_server.py, requirements.txt
+   feat: Added .gitignore and README.md to Front_End/04_08/my-app directory
+   fix: Fixed favicon.ico, manifest.json, robots.txt in Front_End/04_08/my-app/public
+   refactor: Modified App.css, App.test.tsx, App.tsx, index.css, index.tsx in Front_End/04_08/my-app/src
+   refactor: Changed react-app-env.d.ts and reportWebVitals.ts
+   refactor: Updated .idea/.gitignore, .idea/.name, .idea/TIL.iml, .idea/inspectionProfiles/profiles_settings.xml, .idea/modules.xml, .idea/vcs.xml
+   refactor: Added Computer_Science/EIP/Requirement.md and images/Data_Flow.png to Computer_Science/EIP directory
+   refactor: Changed logo192.png, logo512.png in Front_End/04_08/my-app/public
+   fix: Fixed package-lock.json and package.json in Front_End/04_08/my-app directory
