@@ -100,6 +100,30 @@ def get_modified_files() -> List[str]:
         log_message(f"❌ Git 명령어 오류: {e}")
         return []
 
+# 함수만 등록
+def list_untracked_files() -> list[str]:
+    try:
+        out = subprocess.check_output(
+            ["git", "ls-files", "--others", "--exclude-standard"],
+            cwd=str(REPO_PATH)
+        ).decode().splitlines()
+        return out
+    except subprocess.CalledProcessError as e:
+        log_message(f"추적되지 않은 파일 추가 중 오류: {e}")
+
+
+# 함수만 등록
+def stage_all_untracked() -> list[str]:
+    new_files = list_untracked_files()
+    staged = []
+    for f in new_files:
+        try:
+            subprocess.check_call(["git", "add", f], cwd=str(REPO_PATH))
+            staged.append(f)
+        except subprocess.CalledProcessError:
+            log_message(f"❌ 새로운 파일({f}) add 실패")
+    return staged
+
 # 파일별 diff 가져오기
 def get_file_diff(file: str) -> str:
     try:
