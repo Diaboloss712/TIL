@@ -36,7 +36,14 @@ async def call_LLM_api(prompt:str) -> str:
         "prompt": prompt,
         "stream": False
     }
-    async with httpx.AsyncClient(timeout=60.0) as client:
-        response = await client.post(f'{OLLAMA_URL}/api/generate', json=payload)
-        data = response.json()
-        return data.get("response", "")
+    try:
+        async with httpx.AsyncClient(timeout=60.0) as client:
+            response = await client.post(f"{OLLAMA_URL}/api/generate", json=payload)
+            if response.status_code != 200:
+                log_message(f"call_LLM 실패 - status: {response.status_code}, body: {response.text}")
+                return ""
+            data = response.json()
+            return data.get("response", "").strip()
+    except Exception as e:
+        log_message(f"call_LLM 예외 발생: {e}")
+        return ""
