@@ -8,6 +8,7 @@ import os
 import asyncio
 import json
 import traceback
+import datetime
 
 
 # 설정 값
@@ -30,7 +31,13 @@ HEADERS = {
     "Accept": "application/vnd.github.v3+json"
 }
 
-async def call_LLM_api(prompt:str) -> str:
+# 로깅 함수
+def log_message(msg: str):
+    with open(LOG_FILE, "a", encoding="utf-8") as f:
+        f.write(f"[{datetime.datetime.now()}] {msg}\n")
+
+# LLM 요청(리팩토링 필요)
+async def call_LLM(prompt:str) -> str:
     payload = {
         "model": MODEL,
         "prompt": prompt,
@@ -47,3 +54,56 @@ async def call_LLM_api(prompt:str) -> str:
     except Exception as e:
         log_message(f"call_LLM 예외 발생: {e}")
         return ""
+
+# TDD 코드 작성 요청
+async def generate_TDD(source_code:str) -> str:
+    fail_prompt = f"""
+    당신은 TDD 전문가입니다.
+    아래 Python 코드에 대해, 아직 기능이 완성되지 않은 상황을 가정하고, 실패하는 테스트 코드를 작성하세요.
+        - pytest 사용
+        - 실패하는 테스트를 작성
+        - 성공하는 테스트를 작성하지 말 것
+    [코드 시작]
+    {source_code}
+    [코드 끝]
+    """
+
+    success_prompt = f"""
+    당신은 TDD 전문가입니다.
+    아래 Python 코드에 대해, 기능이 완성된 상황을 가정하고, 성공하는 테스트 코드를 작성하세요.
+    - pytest 사용
+    - 통과하는 테스트 코드를 작성
+    - 비동기(async) 코드라면 async 테스트로 작성
+    [코드 시작]
+    {source_code}
+    [코드 끝]
+    """
+
+    try:
+        fail_test_code = await call_LLM(fail_prompt)
+        success_test_code = await call_LLM(success_prompt)
+
+        if not is_valid_test_code(fail_test_code):
+            raise Exception("Fail 테스트 코드 검증 실패")
+        if not is_valid_test_code(success_test_code):
+            raise Exception("Success 테스트 코드 검증 실패")
+
+        return {
+            "fail_test_code": fail_test_code,
+            "success_test_code": success_test_code
+        }
+
+    except Exception as e:
+        log_message(f"generate_tdd 예외 발생: {e}")
+        return {
+            "fail_test_code": "",
+            "success_test_code": ""
+        }
+    
+# 테스트 코드 검증(추가 조건 필요)
+def is_valid_test_code(text: str) -> bool:
+    if not text.strip():
+        return False
+    if "def test_" not in text:
+        return False
+    return True
