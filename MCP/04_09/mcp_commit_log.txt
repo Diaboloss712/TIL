@@ -325,3 +325,117 @@ fix: MCP files and Front End updates
    refactor: Added Computer_Science/EIP/Requirement.md and images/Data_Flow.png to Computer_Science/EIP directory
    refactor: Changed logo192.png, logo512.png in Front_End/04_08/my-app/public
    fix: Fixed package-lock.json and package.json in Front_End/04_08/my-app directory
+[2025-04-22 00:14:16.790719] ✅ MCP/04_09/mcp_commit_log.txt 커밋됨: refactor: Updated MCP server and dependencies in mcp_commit_log.txt, mcp_server.py, requirements.txt
+   feat: Added .gitignore and README.md to Front_End/04_08/my-app directory
+   fix: Fixed favicon.ico, manifest.json, robots.txt in Front_End/04_08/my-app/public
+   refactor: Modified App.css, App.test.tsx, App.tsx, index.css, index.tsx in Front_End/04_08/my-app/src
+   refactor: Changed react-app-env.d.ts and reportWebVitals.ts
+   refactor: Updated .idea/.gitignore, .idea/.name, .idea/TIL.iml, .idea/inspectionProfiles/profiles_settings.xml, .idea/modules.xml, .idea/vcs.xml
+   refactor: Added Computer_Science/EIP/Requirement.md and images/Data_Flow.png to Computer_Science/EIP directory
+   refactor: Changed logo192.png, logo512.png in Front_End/04_08/my-app/public
+   fix: Fixed package-lock.json and package.json in Front_End/04_08/my-app directory
+[2025-04-22 00:14:20.627035] LLM으로부터 받은 메시지 for MCP/04_09/mcp_server.py: feat: Add support for dynamically defining and calling tools in MCP server
+[2025-04-22 00:14:21.153956] ✅ MCP/04_09/mcp_server.py 커밋됨: feat: Add support for dynamically defining and calling tools in MCP server
+[2025-04-22 00:14:24.998983] LLM으로부터 받은 메시지 for MCP/04_09/requirements.txt: bump: updated fastapi-mcp to version 0.3.0 in MCP/04_09/requirements.txt
+[2025-04-22 00:14:24.999277] [형식 오류] MCP/04_09/requirements.txt: bump: updated fastapi-mcp to version 0.3.0 in MCP/04_09/requirements.txt
+[2025-04-22 00:14:25.056719] [스킵] .idea/.gitignore: 변경 내용이 없음
+[2025-04-22 00:14:25.123350] [스킵] .idea/.name: 변경 내용이 없음
+[2025-04-22 00:14:25.195988] [스킵] .idea/TIL.iml: 변경 내용이 없음
+[2025-04-22 00:14:25.268661] [스킵] .idea/inspectionProfiles/profiles_settings.xml: 변경 내용이 없음
+[2025-04-22 00:14:25.341816] [스킵] .idea/modules.xml: 변경 내용이 없음
+[2025-04-22 00:14:25.419536] [스킵] .idea/vcs.xml: 변경 내용이 없음
+[2025-04-22 00:14:25.510390] [스킵] Computer_Science/EIP/Requirement.md: 변경 내용이 없음
+[2025-04-22 00:14:25.614507] [스킵] Computer_Science/EIP/images/Data_Flow.png: 변경 내용이 없음
+[2025-04-22 00:14:25.739097] [스킵] Front_End/04_08/my-app/.gitignore: 변경 내용이 없음
+[2025-04-22 00:14:25.824676] [스킵] Front_End/04_08/my-app/README.md: 변경 내용이 없음
+[2025-04-22 00:14:25.906075] [스킵] Front_End/04_08/my-app/package-lock.json: 변경 내용이 없음
+[2025-04-22 00:14:25.981082] [스킵] Front_End/04_08/my-app/package.json: 변경 내용이 없음
+[2025-04-22 00:14:26.058049] [스킵] Front_End/04_08/my-app/public/favicon.ico: 변경 내용이 없음
+[2025-04-22 00:14:26.129200] [스킵] Front_End/04_08/my-app/public/index.html: 변경 내용이 없음
+[2025-04-22 00:14:26.200650] [스킵] Front_End/04_08/my-app/public/logo192.png: 변경 내용이 없음
+[2025-04-22 00:14:26.270891] [스킵] Front_End/04_08/my-app/public/logo512.png: 변경 내용이 없음
+[2025-04-22 00:14:26.345531] [스킵] Front_End/04_08/my-app/public/manifest.json: 변경 내용이 없음
+[2025-04-22 00:14:26.419165] [스킵] Front_End/04_08/my-app/public/robots.txt: 변경 내용이 없음
+[2025-04-22 00:14:26.493612] [스킵] Front_End/04_08/my-app/src/App.css: 변경 내용이 없음
+[2025-04-22 00:14:26.565074] [스킵] Front_End/04_08/my-app/src/App.test.tsx: 변경 내용이 없음
+[2025-04-22 00:14:26.635077] [스킵] Front_End/04_08/my-app/src/App.tsx: 변경 내용이 없음
+[2025-04-22 00:14:26.721109] [스킵] Front_End/04_08/my-app/src/index.css: 변경 내용이 없음
+[2025-04-22 00:14:26.823590] [스킵] Front_End/04_08/my-app/src/index.tsx: 변경 내용이 없음
+[2025-04-22 00:14:26.928359] [스킵] Front_End/04_08/my-app/src/logo.svg: 변경 내용이 없음
+[2025-04-22 00:14:27.026140] [스킵] Front_End/04_08/my-app/src/react-app-env.d.ts: 변경 내용이 없음
+[2025-04-22 00:14:27.139283] [스킵] Front_End/04_08/my-app/src/reportWebVitals.ts: 변경 내용이 없음
+[2025-04-22 00:14:27.268506] [스킵] Front_End/04_08/my-app/src/setupTests.ts: 변경 내용이 없음
+[2025-04-22 00:14:27.411263] [스킵] Front_End/04_08/my-app/tsconfig.json: 변경 내용이 없음
+[2025-04-22 00:14:30.644158] 🌐 모든 커밋 후 push 완료
+[2025-04-22 00:16:18.237962] 변경 파일 목록: ['MCP/04_09/mcp_commit_log.txt', 'MCP/04_09/requirements.txt', '.idea/.gitignore', '.idea/.name', '.idea/TIL.iml', '.idea/inspectionProfiles/profiles_settings.xml', '.idea/modules.xml', '.idea/vcs.xml', 'Computer_Science/EIP/Requirement.md', 'Computer_Science/EIP/images/Data_Flow.png', 'Front_End/04_08/my-app/.gitignore', 'Front_End/04_08/my-app/README.md', 'Front_End/04_08/my-app/package-lock.json', 'Front_End/04_08/my-app/package.json', 'Front_End/04_08/my-app/public/favicon.ico', 'Front_End/04_08/my-app/public/index.html', 'Front_End/04_08/my-app/public/logo192.png', 'Front_End/04_08/my-app/public/logo512.png', 'Front_End/04_08/my-app/public/manifest.json', 'Front_End/04_08/my-app/public/robots.txt', 'Front_End/04_08/my-app/src/App.css', 'Front_End/04_08/my-app/src/App.test.tsx', 'Front_End/04_08/my-app/src/App.tsx', 'Front_End/04_08/my-app/src/index.css', 'Front_End/04_08/my-app/src/index.tsx', 'Front_End/04_08/my-app/src/logo.svg', 'Front_End/04_08/my-app/src/react-app-env.d.ts', 'Front_End/04_08/my-app/src/reportWebVitals.ts', 'Front_End/04_08/my-app/src/setupTests.ts', 'Front_End/04_08/my-app/tsconfig.json']
+[2025-04-22 00:16:22.646581] LLM으로부터 받은 메시지 for MCP/04_09/mcp_commit_log.txt: refactored: Update file structure and project dependencies
+[2025-04-22 00:16:22.646888] [형식 오류] MCP/04_09/mcp_commit_log.txt: refactored: Update file structure and project dependencies
+[2025-04-22 00:16:26.166536] LLM으로부터 받은 메시지 for MCP/04_09/requirements.txt: bump: updated fastapi-mcp to version 0.3.0 in MCP/04_09/requirements.txt
+[2025-04-22 00:16:26.167136] [형식 오류] MCP/04_09/requirements.txt: bump: updated fastapi-mcp to version 0.3.0 in MCP/04_09/requirements.txt
+[2025-04-22 00:16:26.333030] [스킵] .idea/.gitignore: 변경 내용이 없음
+[2025-04-22 00:16:26.497391] [스킵] .idea/.name: 변경 내용이 없음
+[2025-04-22 00:16:26.624102] [스킵] .idea/TIL.iml: 변경 내용이 없음
+[2025-04-22 00:16:26.722618] [스킵] .idea/inspectionProfiles/profiles_settings.xml: 변경 내용이 없음
+[2025-04-22 00:16:26.814228] [스킵] .idea/modules.xml: 변경 내용이 없음
+[2025-04-22 00:16:26.892492] [스킵] .idea/vcs.xml: 변경 내용이 없음
+[2025-04-22 00:16:26.975638] [스킵] Computer_Science/EIP/Requirement.md: 변경 내용이 없음
+[2025-04-22 00:16:27.124951] [스킵] Computer_Science/EIP/images/Data_Flow.png: 변경 내용이 없음
+[2025-04-22 00:16:27.253472] [스킵] Front_End/04_08/my-app/.gitignore: 변경 내용이 없음
+[2025-04-22 00:16:27.395975] [스킵] Front_End/04_08/my-app/README.md: 변경 내용이 없음
+[2025-04-22 00:16:27.508884] [스킵] Front_End/04_08/my-app/package-lock.json: 변경 내용이 없음
+[2025-04-22 00:16:27.599589] [스킵] Front_End/04_08/my-app/package.json: 변경 내용이 없음
+[2025-04-22 00:16:27.702325] [스킵] Front_End/04_08/my-app/public/favicon.ico: 변경 내용이 없음
+[2025-04-22 00:16:27.793077] [스킵] Front_End/04_08/my-app/public/index.html: 변경 내용이 없음
+[2025-04-22 00:16:27.875053] [스킵] Front_End/04_08/my-app/public/logo192.png: 변경 내용이 없음
+[2025-04-22 00:16:27.956948] [스킵] Front_End/04_08/my-app/public/logo512.png: 변경 내용이 없음
+[2025-04-22 00:16:28.061724] [스킵] Front_End/04_08/my-app/public/manifest.json: 변경 내용이 없음
+[2025-04-22 00:16:28.211672] [스킵] Front_End/04_08/my-app/public/robots.txt: 변경 내용이 없음
+[2025-04-22 00:16:28.310621] [스킵] Front_End/04_08/my-app/src/App.css: 변경 내용이 없음
+[2025-04-22 00:16:28.402422] [스킵] Front_End/04_08/my-app/src/App.test.tsx: 변경 내용이 없음
+[2025-04-22 00:16:28.476198] [스킵] Front_End/04_08/my-app/src/App.tsx: 변경 내용이 없음
+[2025-04-22 00:16:28.540845] [스킵] Front_End/04_08/my-app/src/index.css: 변경 내용이 없음
+[2025-04-22 00:16:28.603502] [스킵] Front_End/04_08/my-app/src/index.tsx: 변경 내용이 없음
+[2025-04-22 00:16:28.666369] [스킵] Front_End/04_08/my-app/src/logo.svg: 변경 내용이 없음
+[2025-04-22 00:16:28.733776] [스킵] Front_End/04_08/my-app/src/react-app-env.d.ts: 변경 내용이 없음
+[2025-04-22 00:16:28.801558] [스킵] Front_End/04_08/my-app/src/reportWebVitals.ts: 변경 내용이 없음
+[2025-04-22 00:16:28.865064] [스킵] Front_End/04_08/my-app/src/setupTests.ts: 변경 내용이 없음
+[2025-04-22 00:16:28.930115] [스킵] Front_End/04_08/my-app/tsconfig.json: 변경 내용이 없음
+[2025-04-22 00:16:30.535039] 🌐 모든 커밋 후 push 완료
+[2025-04-22 00:16:46.532537] 변경 파일 목록: ['MCP/04_09/mcp_commit_log.txt', 'MCP/04_09/requirements.txt', '.idea/.gitignore', '.idea/.name', '.idea/TIL.iml', '.idea/inspectionProfiles/profiles_settings.xml', '.idea/modules.xml', '.idea/vcs.xml', 'Computer_Science/EIP/Requirement.md', 'Computer_Science/EIP/images/Data_Flow.png', 'Front_End/04_08/my-app/.gitignore', 'Front_End/04_08/my-app/README.md', 'Front_End/04_08/my-app/package-lock.json', 'Front_End/04_08/my-app/package.json', 'Front_End/04_08/my-app/public/favicon.ico', 'Front_End/04_08/my-app/public/index.html', 'Front_End/04_08/my-app/public/logo192.png', 'Front_End/04_08/my-app/public/logo512.png', 'Front_End/04_08/my-app/public/manifest.json', 'Front_End/04_08/my-app/public/robots.txt', 'Front_End/04_08/my-app/src/App.css', 'Front_End/04_08/my-app/src/App.test.tsx', 'Front_End/04_08/my-app/src/App.tsx', 'Front_End/04_08/my-app/src/index.css', 'Front_End/04_08/my-app/src/index.tsx', 'Front_End/04_08/my-app/src/logo.svg', 'Front_End/04_08/my-app/src/react-app-env.d.ts', 'Front_End/04_08/my-app/src/reportWebVitals.ts', 'Front_End/04_08/my-app/src/setupTests.ts', 'Front_End/04_08/my-app/tsconfig.json']
+[2025-04-22 00:16:51.551246] LLM으로부터 받은 메시지 for MCP/04_09/mcp_commit_log.txt: Based on the changes, here is a one-line commit message following Conventional Commit format in English:
+
+   `update: files added for new feature`
+[2025-04-22 00:16:51.551645] [형식 오류] MCP/04_09/mcp_commit_log.txt: Based on the changes, here is a one-line commit message following Conventional Commit format in English:
+
+   `update: files added for new feature`
+[2025-04-22 00:16:54.862510] LLM으로부터 받은 메시지 for MCP/04_09/requirements.txt: "chore: Update fastapi-mcp to version 0.3.0"
+[2025-04-22 00:16:55.531506] ✅ MCP/04_09/requirements.txt 커밋됨: "chore: Update fastapi-mcp to version 0.3.0"
+[2025-04-22 00:16:55.643270] [스킵] .idea/.gitignore: 변경 내용이 없음
+[2025-04-22 00:16:55.728407] [스킵] .idea/.name: 변경 내용이 없음
+[2025-04-22 00:16:55.807137] [스킵] .idea/TIL.iml: 변경 내용이 없음
+[2025-04-22 00:16:55.906366] [스킵] .idea/inspectionProfiles/profiles_settings.xml: 변경 내용이 없음
+[2025-04-22 00:16:56.013059] [스킵] .idea/modules.xml: 변경 내용이 없음
+[2025-04-22 00:16:56.096059] [스킵] .idea/vcs.xml: 변경 내용이 없음
+[2025-04-22 00:16:56.185831] [스킵] Computer_Science/EIP/Requirement.md: 변경 내용이 없음
+[2025-04-22 00:16:56.282525] [스킵] Computer_Science/EIP/images/Data_Flow.png: 변경 내용이 없음
+[2025-04-22 00:16:56.369155] [스킵] Front_End/04_08/my-app/.gitignore: 변경 내용이 없음
+[2025-04-22 00:16:56.497612] [스킵] Front_End/04_08/my-app/README.md: 변경 내용이 없음
+[2025-04-22 00:16:56.642209] [스킵] Front_End/04_08/my-app/package-lock.json: 변경 내용이 없음
+[2025-04-22 00:16:56.785285] [스킵] Front_End/04_08/my-app/package.json: 변경 내용이 없음
+[2025-04-22 00:16:56.926442] [스킵] Front_End/04_08/my-app/public/favicon.ico: 변경 내용이 없음
+[2025-04-22 00:16:57.039059] [스킵] Front_End/04_08/my-app/public/index.html: 변경 내용이 없음
+[2025-04-22 00:16:57.137768] [스킵] Front_End/04_08/my-app/public/logo192.png: 변경 내용이 없음
+[2025-04-22 00:16:57.228888] [스킵] Front_End/04_08/my-app/public/logo512.png: 변경 내용이 없음
+[2025-04-22 00:16:57.313030] [스킵] Front_End/04_08/my-app/public/manifest.json: 변경 내용이 없음
+[2025-04-22 00:16:57.417883] [스킵] Front_End/04_08/my-app/public/robots.txt: 변경 내용이 없음
+[2025-04-22 00:16:57.630110] [스킵] Front_End/04_08/my-app/src/App.css: 변경 내용이 없음
+[2025-04-22 00:16:57.756372] [스킵] Front_End/04_08/my-app/src/App.test.tsx: 변경 내용이 없음
+[2025-04-22 00:16:57.856800] [스킵] Front_End/04_08/my-app/src/App.tsx: 변경 내용이 없음
+[2025-04-22 00:16:57.964092] [스킵] Front_End/04_08/my-app/src/index.css: 변경 내용이 없음
+[2025-04-22 00:16:58.069494] [스킵] Front_End/04_08/my-app/src/index.tsx: 변경 내용이 없음
+[2025-04-22 00:16:58.162600] [스킵] Front_End/04_08/my-app/src/logo.svg: 변경 내용이 없음
+[2025-04-22 00:16:58.245553] [스킵] Front_End/04_08/my-app/src/react-app-env.d.ts: 변경 내용이 없음
+[2025-04-22 00:16:58.313168] [스킵] Front_End/04_08/my-app/src/reportWebVitals.ts: 변경 내용이 없음
+[2025-04-22 00:16:58.374879] [스킵] Front_End/04_08/my-app/src/setupTests.ts: 변경 내용이 없음
+[2025-04-22 00:16:58.442300] [스킵] Front_End/04_08/my-app/tsconfig.json: 변경 내용이 없음
+[2025-04-22 00:17:00.442804] 🌐 모든 커밋 후 push 완료
