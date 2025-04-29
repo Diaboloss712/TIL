@@ -36,7 +36,6 @@ def log_message(msg: str):
     with open(LOG_FILE, "a", encoding="utf-8") as f:
         f.write(f"[{datetime.datetime.now()}] {msg}\n")
 
-# LLM 요청(리팩토링 필요)
 async def call_LLM(prompt:str) -> str:
     payload = {
         "model": MODEL,
