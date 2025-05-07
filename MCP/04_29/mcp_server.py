@@ -36,6 +36,8 @@ def log_message(msg: str):
     with open(LOG_FILE, "a", encoding="utf-8") as f:
         f.write(f"[{datetime.datetime.now()}] {msg}\n")
 
+# 로컬 LLM 호출
+@mcp.tool(name="LLM", description="Local LLM")
 async def call_LLM(prompt:str) -> str:
     payload = {
         "model": MODEL,
@@ -55,6 +57,7 @@ async def call_LLM(prompt:str) -> str:
         return ""
 
 # TDD 코드 작성 요청
+@mcp.tool(name="TDD", description="TDD 코드 작성")
 async def generate_TDD(source_code:str) -> str:
     fail_prompt = f"""
     당신은 TDD 전문가입니다.
@@ -106,3 +109,12 @@ def is_valid_test_code(text: str) -> bool:
     if "def test_" not in text:
         return False
     return True
+
+# MCP 툴 목록 가져오기
+async def fetch_mcp_tools(server_url: str) -> list:
+    try:
+        async with httpx.AsyncClient(timeout=30) as client:
+            res = await client.post(f"{server_url}/tools/list", json={})
+            return res.json().get("tools", [])
+    except Exception:
+        return []
